@@ -1,0 +1,11 @@
+bri=set(['brazil','russia','india'])
+print('india' in bri)
+print ('usa' in bri)
+bric=bri.copy()
+bric.add('china')
+print (bri)
+bri.remove('russia')
+print(bri)
+
+print (bri & bric )
+print (bric)
