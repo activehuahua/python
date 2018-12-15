@@ -2,7 +2,9 @@ import requests, re
 import json
 import time
 from requests.exceptions import RequestException
-url = 'https://maoyan.com/board/4'
+from PIL import Image
+import os, string
+
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36"
 }
@@ -12,7 +14,7 @@ def get_html(pageUrl):
     try:
         req = requests.get(pageUrl, headers=headers)
         # print(req.text)
-        if(req.status_code == 200):
+        if (req.status_code == 200):
             html = req.text
             return html
         return None
@@ -26,8 +28,6 @@ def parse_movie_info(html):
         re.S)
     result = re.findall(pattern, html)
 
-    # for item in result:
-    #     print(item[0],item[1],item[2],item[3],item[4],item[5])
     for item in result:
         yield {
             'index': item[0],
@@ -35,33 +35,43 @@ def parse_movie_info(html):
             'name': item[2].strip(),
             'actor': item[3].strip()[3:],
             'time': item[4].strip()[5:],
-            'score': item[5]+ item[6]
+            'score': item[5] + item[6]
         }
     return result
 
+
 def write_to_file(content):
-    with open('maoyan.txt','a',encoding='UTF-8') as f:
-        #f.write(json.dumps(content, ensure_ascii=False) + '\n')
-        f.write(str(content)+'\n')
+    with open('maoyan.txt', 'a', encoding='UTF-8') as f:
+        # f.write(json.dumps(content, ensure_ascii=False) + '\n')
+        f.write(str(content) + '\n')
+
 
 def get_all_urls():
     url_list = []
     for item in range(0, 100, 10):
         url_list.append(url + '?offset=' + str(item))
-   # print(url_list)
     return url_list
 
+def save_pic_local(content):
+    if (os.path.exists('imgs')):
+        pass
+    else:
+        os.mkdir('imgs')
+    img = content['image']
+    img_real_url = str(img).split('@')[0]
+    img = requests.get(img_real_url)
+    with open('imgs/' + content['name'] + '.jpg', 'ab') as f:
+        f.write(img.content)
 
-# parse_movie_info(get_html(url))
 
-# get_all_urls()
 if __name__ == '__main__':
+    url = 'https://maoyan.com/board/4'
     urls = get_all_urls()
     totalPages = len(urls)
     for item in range(totalPages):
-        print(urls[item])
-        #write_to_file(parse_movie_info(get_html(urls[item])))
-        html=get_html(urls[item])
+        #   print(urls[item])
+        html = get_html(urls[item])
         for content in parse_movie_info(html):
-            print(content)
+            #  print(content)
             write_to_file(content)
+            save_pic_local(content)
