@@ -22,5 +22,38 @@ text='''
 #     f.write(result.decode('UTF-8'))
 
 html=etree.parse('test.html',etree.HTMLParser())
-result=html.xpath('//li//a')
+# result=html.xpath('//*')
+# print(result)
+#
+# result=html.xpath('//a[@href="link4.html"]/../@class')
+# print(result)
+#
+# result=html.xpath('//a[@href="link4.html"]/parent::*/@class')
+# print(result)
+#
+# result = html.xpath('//li[@class="item-1"]')
+# print(result)
+#
+# result = html.xpath('//li[@class="item-1"]/text()')
+# print(result)
+#
+# result = html.xpath('//li[@class="item-0"]/a/text()')
+# print(result)
+#
+# result = html.xpath('//li[@class="item-0"]//text()')
+# print(result)
+#
+# result = html.xpath('//li/a/@href')
+# print(result)
+
+result = html.xpath('//li[1]/a/text()')
+print(result)
+
+result = html.xpath('//li[last()]/a/text()')
+print(result)
+
+result = html.xpath('//li[position()<3]/a/text()')
+print(result)
+
+result = html.xpath('//li[last()-2]/a/text()')
 print(result)
