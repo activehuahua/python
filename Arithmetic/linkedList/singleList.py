@@ -39,6 +39,13 @@ class SingleLinkedList(object):
             cur = cur.next
         print('\n')
 
+
+    def print_all(self,head):
+        self.__head=head
+        while head:
+            print(head.item , end='')
+            head = head.next
+
     def add(self, item):
         node = Node(item)
         node.next = self.__head
@@ -107,21 +114,33 @@ class SingleLinkedList(object):
                 cur = cur.next
         return False
 
-    def reverse(self):
-        cur = self.__head
-        pre = None
-        if (self.is_empty()):
+    # def reverse(self):
+    #     cur = self.__head
+    #     pre = None
+    #     if (self.is_empty()):
+    #         return None
+    #     while cur != None:
+    #         if cur.next != None:
+    #             temp = cur.next
+    #             cur.next = pre
+    #             pre = cur
+    #             cur = temp
+    #         else:
+    #             cur.next = pre
+    #             self.__head = cur
+    #             break
+
+    def reverse(self,head):
+        cur = head
+        reverse_head = None
+        if (head ==None):
             return None
         while cur != None:
-            if cur.next != None:
                 temp = cur.next
-                cur.next = pre
-                pre = cur
+                cur.next = reverse_head
+                reverse_head = cur
                 cur = temp
-            else:
-                cur.next = pre
-                self.__head = cur
-                break
+        return reverse_head
 
     def mid_position(self):
         fast = self.__head
@@ -136,7 +155,37 @@ class SingleLinkedList(object):
         return pos
 
     def is_circle(self):
-        pass
+        slow,fast=self.__head,self.__head
+        while fast and fast.next:
+            fast=fast.next.next
+            slow=slow.next
+            if slow==fast:
+                return True
+        return False
+
+    def __iter__(self):
+        node=self.__head
+        while node:
+            yield node.item
+            node=node.next
+
+    def is_palindrome(self):
+        slow, fast = self.__head, self.__head
+        temp=None
+        temp = self.__head
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+            #temp=slow
+        reversedHead=self.reverse(slow)
+  #      self.print_all(reversedHead)
+
+        while temp and reversedHead:
+            if temp.item != reversedHead.item:
+                return False
+            temp=temp.next
+            reversedHead=reversedHead.next
+        return True
 
 
 def mergeTwoSortedLinkedList(list1, list2):
@@ -163,6 +212,8 @@ def mergeTwoSortedLinkedList(list1, list2):
     return list
 
 
+
+
 if __name__ == "__main__":
     # node = Node(100)  # 先创建一个节点传进去
 
@@ -172,9 +223,12 @@ if __name__ == "__main__":
 
     for i in range(13):
         ll.append(i)
-    ll.travel()
-    # ll.reverse()
-    # ll.travel()
+   # ll.travel()
+    reversedHead=ll.reverse(ll.getHead())
+    ll.print_all(reversedHead)
+    while reversedHead:
+        print(str(reversedHead.item)+'->',end='')
+        reversedHead=reversedHead.next
     # print(ll.mid_position())
     # ll.remove_pos_node(6)
     # ll.travel()
@@ -191,3 +245,13 @@ if __name__ == "__main__":
     list2.travel()
     list=mergeTwoSortedLinkedList(list1, list2)
     list.travel()
+
+    test_str_arr = ['abab', 'aa', 'aba', 'abba', 'abcba', 'abc1ba', 'abc1cba']
+    for str in test_str_arr:
+        l = SingleLinkedList()
+        for i in str:
+            l.append(i)
+        for data in l:
+            print(data+'->',end=' ')
+        print(l.is_palindrome())
+
