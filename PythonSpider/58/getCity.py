@@ -110,6 +110,7 @@ def get_canton(pageUrl):
 
 def get_cityCode(cityName='北京', connection=None):
     sql = f'select cityCode from city where cityName="{cityName}"'
+    result = ' '
     try:
         mycusor = connection.cursor()
         mycusor.execute(sql)
@@ -122,6 +123,7 @@ def get_cityCode(cityName='北京', connection=None):
         print(e.reason)
     finally:
         return result
+
 def  deal_data(name,cityCode,pageUrl,cantonsList):
     lists=[]
     cantons=''
