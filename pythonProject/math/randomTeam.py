@@ -119,7 +119,7 @@ def get_oneGroup_member(str):
         if int(i) > length:
             print('输入有误，请重新输入')
             return -1
-    if length>1:
+    if length>=1:
         result.append(get_one_person_from_list_pos(captains, int(str[0])))
         result.append(get_one_person_from_list_pos(boys1, int(str[1])))
         result.append(get_one_person_from_list_pos(boys2, int(str[2])))
@@ -129,13 +129,13 @@ def get_oneGroup_member(str):
        # print('\n')
         length = len(captains)
         # print('length=',length)
-        if length==1:
-            result = []
-            result.append(captains[0])
-            result.append(boys1[0])
-            result.append(boys2[0])
-            result.append(boys3[0])
-            print(result)
+        # if length==1:
+        #     result = []
+        #     result.append(captains[0])
+        #     result.append(boys1[0])
+        #     result.append(boys2[0])
+        #     result.append(boys3[0])
+        #     print(result)
 def print_remain():
 
     print('*****选手池中还剩以下这些人*****')
@@ -148,7 +148,7 @@ def print_remain():
     re_random_list(boys1)
     re_random_list(boys2)
     re_random_list(boys3)
-    print('*******************')
+
     print(captains)
     print(boys1)
     print(boys2)
@@ -185,8 +185,9 @@ if __name__ == '__main__':
     # print_all_random_group()
 
     str=input('请输入四位抽签数字：')
-    while str!="-1":
+    while str!="-1" :
         get_oneGroup_member(str)
-
+        if len(captains)==0 or captains is None :
+            break
         str = input('请输入四位抽签数字：')
 
