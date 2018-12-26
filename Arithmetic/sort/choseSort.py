@@ -39,9 +39,10 @@ def choseSort(list):
 
 if __name__ == '__main__':
 
-
+    dataList=get_random_list(10000)
     begin_time=datetime.now()
-    choseSort(get_random_list(10000))
+    choseSort(dataList)
     end_time=datetime.now()
-    print(dataList)
+
     print('耗时：',end_time-begin_time)
+    print(dataList)
