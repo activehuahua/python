@@ -57,6 +57,6 @@ if __name__=='__main__':
     # quick_sort(a,6)
     # print(a)
     a=[6,1,3,5,7,2,4,9,11,8]
-    quick_sort(a,10)
+    quick_sort(a,1)
     print(a)
 

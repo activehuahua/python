@@ -7,46 +7,50 @@
 @desc   :归并排序
 '''
 
-def merge_sort(A):
-    merge_sort_c(A, 0,len(A)-1)
 
-def merge_sort_c(A,low,high):
-    if low>=high:
+def merge_sort(A):
+    merge_sort_c(A, 0, len(A) - 1)
+
+
+def merge_sort_c(A, low, high):
+    if low >= high:
         return
 
-    mid=(low+high) //2
-    merge_sort_c(A,low,mid)
-    merge_sort_c(A, mid+1, high)
-    merge(A,low,mid,high)
+    mid = (low + high) // 2
+    merge_sort_c(A, low, mid)
+    merge_sort_c(A, mid + 1, high)
+    merge(A, low, mid, high)
 
-def merge(A,low,mid,high ):
-    temp=[]
-    i,j=low,mid+1
-    while i<=mid  and j<=high :
-        if A[i]<=A[j]:
+
+def merge(A, low, mid, high):
+    temp = []
+    i, j = low, mid + 1
+    while i <= mid and j <= high:
+        if A[i] <= A[j]:
             temp.append(A[i])
-            i+=1
+            i += 1
         else:
             temp.append(A[j])
             j += 1
-    start=i
-    end=mid
-    if (i>mid):
-        start=j
-        end =high
-    while start<=end:
+    start = i
+    end = mid
+    if (i > mid):
+        start = j
+        end = high
+    while start <= end:
         temp.append(A[start])
-        start+=1
+        start += 1
     # k=0
     # for k in range (high-low+1):
     #      A[low+k]=temp[k]
     #
     # A[p + k] = temp[k]
 
-    A[low:high+1]=temp
+    A[low:high + 1] = temp
 
-if __name__=='__main__':
-    A=[1,5,6,2,3,4]
+
+if __name__ == '__main__':
+    A = [1, 5, 6, 2, 3, 4]
     merge_sort(A)
     print(A)
     a1 = [3, 5, 6, 7, 8]
