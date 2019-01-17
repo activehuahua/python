@@ -14,6 +14,10 @@ from selenium.webdriver.chrome.options import Options
 def main():
     chrome_options = Options()
     chrome_options.add_argument('--headless')
+
+    #添加代理选项
+    #chrome_options.add_argument('--proxy-server=http://'+proxy)
+
     # chrome_options.add_argument('--disable-gpu')
     # driver = webdriver.Chrome(executable_path='./chromedriver', chrome_options=chrome_options)
     driver = webdriver.Chrome(chrome_options=chrome_options)
