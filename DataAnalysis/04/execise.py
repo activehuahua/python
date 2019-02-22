@@ -10,6 +10,7 @@ import sys
 
 
 
+
 scoreType=np.dtype({
     'names':['name','Chinese','English','Math','Total'],
     'formats':['U32','i','i','i','i']})
