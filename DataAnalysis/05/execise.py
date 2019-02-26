@@ -24,6 +24,8 @@ df=df.drop_duplicates()
 #有空值None的地方默认替换成0
 df=df.fillna(0)
 
+#df['Math']=df['Math'].fillna(df['Math'].mean(),inplace=True)
+
 df['Total']=df.sum(axis=1)
 df.rename(columns={'Chinese':u'语文','English':u'英语','Math':u'数学','Total':u'总分'},inplace=True)
 
