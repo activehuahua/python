@@ -21,3 +21,7 @@ print(hjson['id'])
 print(hjson['rating']['max'])
 print(hjson['tags'][0]['name'])
 print(hjson['publisher'])
+print(hjson['tags'])
+
+for item in range(len(hjson['tags'])) :
+    print(hjson['tags'][item])
