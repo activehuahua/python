@@ -9,13 +9,15 @@ import json
 import pymongo
 from mitmproxy import ctx
 
-client = pymongo.MongoClient('localhost')
-#client = pymongo.MongoClient('mongodb://localhost:27017/')
-db = client['igetget']
-collection = db['books']
+#client = pymongo.MongoClient('localhost')
+# client = pymongo.MongoClient('mongodb://localhost:27017/')
+# db = client.igetget
+# collection = db.books
 
 def response(flow):
-    global collection
+    client = pymongo.MongoClient('mongodb://localhost:27017/')
+    db = client.igetget
+    collection = db.books
     #url = 'https://dedao.igetget.com/v3/discover/bookList'
     url = 'https://entree.igetget.com/ebook2/v1/ebook/list'
     if flow.request.url.startswith(url):
