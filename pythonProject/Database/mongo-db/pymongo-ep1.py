@@ -30,7 +30,7 @@ student2 = {
     'gender': 'male'
 }
 
-# result = collection.insert_many([student1,student2])
+result = collection.insert_many([student1,student2])
 # print(result)
 
 # result=collection.find_one({'name':'Mike'})
