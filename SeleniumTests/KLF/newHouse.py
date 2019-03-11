@@ -35,10 +35,6 @@ class newHouse(unittest.TestCase):
         print("test end")
 
 if __name__ == '__main__':
-    # newhouse1=newHouse()
-    # newhouse1.loginHMFActions()
-    #newhouse1.getTotal()
-
 
     suit=unittest.TestSuite()
     suit.addTest(newHouse('test_getTotal'))
