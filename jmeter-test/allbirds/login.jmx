@@ -87,11 +87,19 @@
             </elementProp>
             <elementProp name="" elementType="Header">
               <stringProp name="Header.name">Accept</stringProp>
-              <stringProp name="Header.value">application/x-ms-application, image/jpeg, application/xaml+xml, image/gif, image/pjpeg, application/x-ms-xbap, */*</stringProp>
+              <stringProp name="Header.value">application/json, text/javascript </stringProp>
             </elementProp>
             <elementProp name="" elementType="Header">
               <stringProp name="Header.name">Accept-Language</stringProp>
               <stringProp name="Header.value">zh-CN</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">content-type</stringProp>
+              <stringProp name="Header.value">application/json; charset=utf-8</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">x-frame-options</stringProp>
+              <stringProp name="Header.value">SAMEORIGIN</stringProp>
             </elementProp>
           </collectionProp>
         </HeaderManager>
@@ -136,7 +144,7 @@
               <stringProp name="RegexExtractor.match_number"></stringProp>
             </RegexExtractor>
             <hashTree/>
-            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="false">
               <stringProp name="filename"></stringProp>
               <stringProp name="parameters"></stringProp>
               <boolProp name="resetInterpreter">false</boolProp>
@@ -213,7 +221,8 @@
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;id&quot;:&quot;147&quot;,&quot;qty&quot;:1,&quot;form_key&quot;:&quot;${form_key}&quot;,&quot;super_attribute&quot;:[{&quot;attribute&quot;:&quot;93&quot;,&quot;value&quot;:&quot;53&quot;},{&quot;attribute&quot;:&quot;183&quot;,&quot;value&quot;:&quot;63&quot;}]}</stringProp>
+                  <stringProp name="Argument.value">{&quot;data&quot;:&quot;{\&quot;id\&quot;:\&quot;147\&quot;,\&quot;qty\&quot;:1,\&quot;form_key\&quot;:\&quot;${__property(form_key)}\&quot;,\&quot;super_attribute\&quot;:[{\&quot;attribute\&quot;:\&quot;93\&quot;,\&quot;value\&quot;:\&quot;53\&quot;},{\&quot;attribute\&quot;:\&quot;183\&quot;,\&quot;value\&quot;:\&quot;63\&quot;}]}&quot;}&#xd;
+</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -234,7 +243,7 @@
           </HTTPSamplerProxy>
           <hashTree/>
         </hashTree>
-        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="${__threadNum}-${__property(form_key)}" enabled="true">
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="${__threadNum}-${__property(form_key)}-${form_key}" enabled="true">
           <boolProp name="displayJMeterProperties">false</boolProp>
           <boolProp name="displayJMeterVariables">true</boolProp>
           <boolProp name="displaySystemProperties">false</boolProp>
