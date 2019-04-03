@@ -47,9 +47,9 @@
         <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
           <collectionProp name="CookieManager.cookies">
             <elementProp name="form_key" elementType="Cookie" testname="form_key">
-              <stringProp name="Cookie.value">${__property(formkey)}</stringProp>
-              <stringProp name="Cookie.domain"></stringProp>
-              <stringProp name="Cookie.path"></stringProp>
+              <stringProp name="Cookie.value">${__property(form_key)}</stringProp>
+              <stringProp name="Cookie.domain">www.allbirds.cn</stringProp>
+              <stringProp name="Cookie.path">/</stringProp>
               <boolProp name="Cookie.secure">false</boolProp>
               <longProp name="Cookie.expires">0</longProp>
               <boolProp name="Cookie.path_specified">true</boolProp>
@@ -234,7 +234,7 @@
           </HTTPSamplerProxy>
           <hashTree/>
         </hashTree>
-        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="${__threadNum}" enabled="true">
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="${__threadNum}-${__property(form_key)}" enabled="true">
           <boolProp name="displayJMeterProperties">false</boolProp>
           <boolProp name="displayJMeterVariables">true</boolProp>
           <boolProp name="displaySystemProperties">false</boolProp>
