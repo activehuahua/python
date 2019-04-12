@@ -36,6 +36,22 @@
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
       <hashTree>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie管理器" enabled="true">
+          <collectionProp name="CookieManager.cookies">
+            <elementProp name="X-Magento-Vary" elementType="Cookie" testname="X-Magento-Vary">
+              <stringProp name="Cookie.value">${X-Magento-Vary}</stringProp>
+              <stringProp name="Cookie.domain">mage2ee.silksoftware.net</stringProp>
+              <stringProp name="Cookie.path">/</stringProp>
+              <boolProp name="Cookie.secure">false</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+          </collectionProp>
+          <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+          <stringProp name="CookieManager.policy">compatibility</stringProp>
+        </CookieManager>
+        <hashTree/>
         <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP请求默认值" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
             <collectionProp name="Arguments.arguments"/>
@@ -58,7 +74,7 @@
             </elementProp>
             <elementProp name="Accept" elementType="Header">
               <stringProp name="Header.name">Accept</stringProp>
-              <stringProp name="Header.value">application/x-ms-application, image/jpeg, application/xaml+xml, image/gif, image/pjpeg, application/x-ms-xbap</stringProp>
+              <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3</stringProp>
             </elementProp>
             <elementProp name="User-Agent&#x9;Mozilla/5.0 (Windows NT 6.1; WOW64; rv" elementType="Header">
               <stringProp name="Header.name">User-Agent</stringProp>
@@ -66,11 +82,6 @@
             </elementProp>
           </collectionProp>
         </HeaderManager>
-        <hashTree/>
-        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie管理器" enabled="true">
-          <collectionProp name="CookieManager.cookies"/>
-          <boolProp name="CookieManager.clearEachIteration">true</boolProp>
-        </CookieManager>
         <hashTree/>
         <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
           <collectionProp name="Arguments.arguments">
@@ -86,6 +97,18 @@
             </elementProp>
           </collectionProp>
         </Arguments>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">D:/python-github/jmeter-test/mage2ee/testusers-one.txt</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames"></stringProp>
+        </CSVDataSet>
         <hashTree/>
         <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
@@ -155,7 +178,7 @@
               <collectionProp name="Arguments.arguments">
                 <elementProp name="login[username]" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                  <stringProp name="Argument.value">a1lex001@silksoftware.com</stringProp>
+                  <stringProp name="Argument.value">a1lex004@silksoftware.com</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   <stringProp name="Argument.name">login[username]</stringProp>
@@ -173,6 +196,13 @@
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   <stringProp name="Argument.name">form_key</stringProp>
+                </elementProp>
+                <elementProp name="send" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">send</stringProp>
                 </elementProp>
               </collectionProp>
             </elementProp>
@@ -193,7 +223,7 @@
           <hashTree>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
               <collectionProp name="Asserion.test_strings">
-                <stringProp name="836163693">a1lex001@silksoftware.com</stringProp>
+                <stringProp name="2139913930">a1lex004@silksoftware.com</stringProp>
               </collectionProp>
               <stringProp name="Assertion.custom_message"></stringProp>
               <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
@@ -201,7 +231,25 @@
               <intProp name="Assertion.test_type">2</intProp>
             </ResponseAssertion>
             <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">true</stringProp>
+              <stringProp name="RegexExtractor.refname">X-Magento-Vary</stringProp>
+              <stringProp name="RegexExtractor.regex">Set-Cookie: X-Magento-Vary=(.*?); path=/</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
+              <stringProp name="RegexExtractor.match_number"></stringProp>
+            </RegexExtractor>
+            <hashTree/>
           </hashTree>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extractor addressID" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">addressId</stringProp>
+            <stringProp name="RegexExtractor.regex">/customer/address/edit/id/(.*?)/&quot; data-ui</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default"></stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
           <GaussianRandomTimer guiclass="GaussianRandomTimerGui" testclass="GaussianRandomTimer" testname="高斯随机定时器" enabled="true">
             <stringProp name="ConstantTimer.delay">500</stringProp>
             <stringProp name="RandomTimer.range">500</stringProp>
@@ -264,6 +312,15 @@
               <stringProp name="RandomTimer.range">500</stringProp>
             </GaussianRandomTimer>
             <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">product_url</stringProp>
+              <stringProp name="RegexExtractor.regex">&lt;a href=&quot;http://mage2ee.silksoftware.net/default/(.*?)&quot; class=&quot;product photo product</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="商品详情" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
@@ -273,7 +330,7 @@
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/default/argus-all-weather-tank.html</stringProp>
+            <stringProp name="HTTPSampler.path">/default/${product_url}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -296,7 +353,7 @@
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="get-uenc" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
               <stringProp name="RegexExtractor.refname">uenc</stringProp>
-              <stringProp name="RegexExtractor.regex">/uenc/(.*),,/product/</stringProp>
+              <stringProp name="RegexExtractor.regex">/uenc/(.*?),,/product/</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
               <stringProp name="RegexExtractor.default"></stringProp>
               <stringProp name="RegexExtractor.match_number"></stringProp>
@@ -336,21 +393,21 @@
                 </elementProp>
                 <elementProp name="qty" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">1</stringProp>
+                  <stringProp name="Argument.value">2</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   <stringProp name="Argument.name">qty</stringProp>
                 </elementProp>
                 <elementProp name="super_attribute[93]" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">52</stringProp>
+                  <stringProp name="Argument.value">49</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   <stringProp name="Argument.name">super_attribute[93]</stringProp>
                 </elementProp>
                 <elementProp name="super_attribute[160]" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">179</stringProp>
+                  <stringProp name="Argument.value">181</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   <stringProp name="Argument.name">super_attribute[160]</stringProp>
@@ -361,8 +418,8 @@
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/default/checkout/cart/add</stringProp>
-            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <stringProp name="HTTPSampler.path">/default/checkout/cart/add/uenc/${uenc},,/product/${product}/</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
             <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
@@ -382,8 +439,8 @@
             </HeaderManager>
             <hashTree/>
             <GaussianRandomTimer guiclass="GaussianRandomTimerGui" testclass="GaussianRandomTimer" testname="高斯随机定时器" enabled="true">
-              <stringProp name="ConstantTimer.delay">500</stringProp>
-              <stringProp name="RandomTimer.range">500</stringProp>
+              <stringProp name="ConstantTimer.delay">2000</stringProp>
+              <stringProp name="RandomTimer.range">1000</stringProp>
             </GaussianRandomTimer>
             <hashTree/>
           </hashTree>
@@ -449,8 +506,8 @@
             </ResponseAssertion>
             <hashTree/>
             <GaussianRandomTimer guiclass="GaussianRandomTimerGui" testclass="GaussianRandomTimer" testname="高斯随机定时器" enabled="true">
-              <stringProp name="ConstantTimer.delay">500</stringProp>
-              <stringProp name="RandomTimer.range">500</stringProp>
+              <stringProp name="ConstantTimer.delay">2000</stringProp>
+              <stringProp name="RandomTimer.range">1000</stringProp>
             </GaussianRandomTimer>
             <hashTree/>
           </hashTree>
@@ -516,14 +573,27 @@
               <intProp name="Assertion.test_type">2</intProp>
             </ResponseAssertion>
             <hashTree/>
-            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extractor addressID" enabled="true">
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extractor Customer ID" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">addressId</stringProp>
-              <stringProp name="RegexExtractor.regex">&quot;default_shipping&quot;:&quot;(.*?)&quot;</stringProp>
+              <stringProp name="RegexExtractor.refname">customer_id</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;customer_id&quot;:&quot;(.*?)&quot;,</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
               <stringProp name="RegexExtractor.default"></stringProp>
-              <stringProp name="RegexExtractor.match_number">1</stringProp>
+              <stringProp name="RegexExtractor.match_number"></stringProp>
             </RegexExtractor>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Shopping Methods" enabled="true">
@@ -589,7 +659,7 @@
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;addressInformation&quot;:{&quot;shipping_address&quot;:{&quot;customerAddressId&quot;:&quot;41&quot;,&quot;countryId&quot;:&quot;US&quot;,&quot;regionId&quot;:&quot;12&quot;,&quot;regionCode&quot;:&quot;CA&quot;,&quot;region&quot;:&quot;California&quot;,&quot;customerId&quot;:&quot;80&quot;,&quot;street&quot;:[&quot;street address #111&quot;],&quot;telephone&quot;:&quot;18086846185&quot;,&quot;postcode&quot;:&quot;12345-6789&quot;,&quot;city&quot;:&quot;CA city&quot;,&quot;firstname&quot;:&quot;zjh&quot;,&quot;lastname&quot;:&quot;zhao&quot;},&quot;billing_address&quot;:{&quot;customerAddressId&quot;:&quot;41&quot;,&quot;countryId&quot;:&quot;US&quot;,&quot;regionId&quot;:&quot;12&quot;,&quot;regionCode&quot;:&quot;CA&quot;,&quot;region&quot;:&quot;California&quot;,&quot;customerId&quot;:&quot;80&quot;,&quot;street&quot;:[&quot;street address #111&quot;],&quot;telephone&quot;:&quot;18086846185&quot;,&quot;postcode&quot;:&quot;12345-6789&quot;,&quot;city&quot;:&quot;CA city&quot;,&quot;firstname&quot;:&quot;zjh&quot;,&quot;lastname&quot;:&quot;zhao&quot;,&quot;saveInAddressBook&quot;:null},&quot;shipping_method_code&quot;:&quot;flatrate&quot;,&quot;shipping_carrier_code&quot;:&quot;flatrate&quot;}}</stringProp>
+                  <stringProp name="Argument.value">{&quot;addressInformation&quot;:{&quot;shipping_address&quot;:{&quot;customerAddressId&quot;:&quot;${addressId}&quot;,&quot;countryId&quot;:&quot;US&quot;,&quot;regionId&quot;:&quot;12&quot;,&quot;regionCode&quot;:&quot;CA&quot;,&quot;region&quot;:&quot;California&quot;,&quot;customerId&quot;:&quot;${customer_id}&quot;,&quot;street&quot;:[&quot;street address #111&quot;],&quot;telephone&quot;:&quot;18086846185&quot;,&quot;postcode&quot;:&quot;12345-6789&quot;,&quot;city&quot;:&quot;CA city&quot;,&quot;firstname&quot;:&quot;zjh&quot;,&quot;lastname&quot;:&quot;zhao&quot;},&quot;billing_address&quot;:{&quot;customerAddressId&quot;:&quot;${addressId}&quot;,&quot;countryId&quot;:&quot;US&quot;,&quot;regionId&quot;:&quot;12&quot;,&quot;regionCode&quot;:&quot;CA&quot;,&quot;region&quot;:&quot;California&quot;,&quot;customerId&quot;:&quot;${customer_id}&quot;,&quot;street&quot;:[&quot;street address #111&quot;],&quot;telephone&quot;:&quot;18086846185&quot;,&quot;postcode&quot;:&quot;12345-6789&quot;,&quot;city&quot;:&quot;CA city&quot;,&quot;firstname&quot;:&quot;zjh&quot;,&quot;lastname&quot;:&quot;zhao&quot;,&quot;saveInAddressBook&quot;:null},&quot;shipping_method_code&quot;:&quot;flatrate&quot;,&quot;shipping_carrier_code&quot;:&quot;flatrate&quot;}}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -659,12 +729,12 @@
                   <stringProp name="Argument.value">{&#xd;
 	&quot;cartId&quot;: &quot;${cart_id}&quot;,&#xd;
 	&quot;billingAddress&quot;: {&#xd;
-		&quot;customerAddressId&quot;: &quot;41&quot;,&#xd;
+		&quot;customerAddressId&quot;: &quot;${addressId}&quot;,&#xd;
 		&quot;countryId&quot;: &quot;US&quot;,&#xd;
 		&quot;regionId&quot;: &quot;12&quot;,&#xd;
 		&quot;regionCode&quot;: &quot;CA&quot;,&#xd;
 		&quot;region&quot;: &quot;California&quot;,&#xd;
-		&quot;customerId&quot;: &quot;80&quot;,&#xd;
+		&quot;customerId&quot;: &quot;${customer_id}&quot;,&#xd;
 		&quot;street&quot;: [&quot;street address #111&quot;],&#xd;
 		&quot;telephone&quot;: &quot;18086846185&quot;,&#xd;
 		&quot;postcode&quot;: &quot;12345-6789&quot;,&#xd;
@@ -777,6 +847,43 @@
           <hashTree/>
         </hashTree>
       </hashTree>
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
       <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
@@ -811,7 +918,7 @@
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">D:\python-github\jmeter-test\mage2ee\customer_checkout.jtl</stringProp>
+        <stringProp name="filename">D:\python-github\jmeter-test\mage2ee\customer_checkout_one.jtl</stringProp>
       </ResultCollector>
       <hashTree/>
     </hashTree>
