@@ -8,15 +8,15 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from time import sleep
-#from SilkTestStructure.pages.po_module import Page
 from pages.po_module import Page
 
 class LoginPage(Page):
 
-
     username_loc=(By.ID,"account")
     password_loc=(By.ID,"password")
     submit_loc=(By.ID,"loginBtn")
+
+    accoutName_loc=(By.XPATH,"//div[contains(@class,'text-right') and contains(@class,'admin-desc')]/a")
 
     #Action
     def type_username(self,username):
@@ -27,6 +27,10 @@ class LoginPage(Page):
 
     def submit(self):
         self.find_element(*self.submit_loc).click()
+
+    def getAccoutName(self):
+        return self.find_element(*self.accoutName_loc).text
+
 
     def user_login(username,password):
         url='/'

@@ -4,14 +4,13 @@
 # @File    : test_loginpage.py
 # @Software: PyCharm
 # @Desc    :
-#from SilkTestStructure.pages   import LoginPage
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 from pages import LoginPage
 #import pytest
 from time import sleep
-#from SilkTestStructure.config  import configs
 from config import  configs
 
 
@@ -23,8 +22,9 @@ class Test_loginPage():
 
         page = LoginPage.LoginPage.user_login(username, password)
         sleep(3)
-        accountName=page.driver.find_element_by_xpath("//div[contains(@class,'text-right') and contains(@class,'admin-desc')]/a").text
+        accountName=page.getAccoutName()
 
+        print(accountName)
         assert accountName==username
 
 if __name__ == '__main__':
