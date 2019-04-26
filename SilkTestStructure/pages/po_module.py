@@ -8,7 +8,9 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from time import sleep
-from SilkTestStructure.config import configs
+#from SilkTestStructure.config import configs
+from config import configs
+
 class Page(object):
 
 
@@ -23,8 +25,8 @@ class Page(object):
 
     def _open(self,url):
         self.url=self.base_url+url
-        self.driver.get(url)
-        assert self.on_page(),'Did not land on %s'%url
+        self.driver.get(self.url)
+        # assert self.on_page(),'Did not land on %s'% self.url
 
     def open(self):
         self._open(self.url)
