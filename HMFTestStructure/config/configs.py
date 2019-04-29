@@ -5,5 +5,5 @@
 # @Software: PyCharm
 # @Desc    :
 
-_URL='https://rays-store8.mybigcommerce.com/'
+_URL='http://ht.huimaifang.com'
 _SCLOGIN={'username':'scadmin','password':'123456'}

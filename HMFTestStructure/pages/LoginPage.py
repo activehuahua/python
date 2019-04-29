@@ -12,9 +12,8 @@ from pages.po_module import Page
 
 class LoginPage(Page):
 
-    #username_loc=(By.ID,"account")
-    email_loc=(By.ID,"login_email")
-    password_loc=(By.ID,"login_pass")
+    username_loc=(By.ID,"account")
+    password_loc=(By.ID,"password")
     submit_loc=(By.ID,"loginBtn")
 
     accoutName_loc=(By.XPATH,"//div[contains(@class,'text-right') and contains(@class,'admin-desc')]/a")
