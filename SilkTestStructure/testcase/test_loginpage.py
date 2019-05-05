@@ -12,13 +12,14 @@ from pages import LoginPage
 #import pytest
 from time import sleep
 from config import  configs
+from data import login_data
 
 
 class Test_loginPage():
 
     def test_login1(self):
-        username=configs._SCLOGIN['username']
-        password=configs._SCLOGIN['password']
+        username=login_data._admin['username']
+        password=login_data._admin['password']
 
         page = LoginPage.LoginPage.user_login(username, password)
         sleep(3)
@@ -27,6 +28,16 @@ class Test_loginPage():
         print(accountName)
         assert accountName==username
 
+    def test_errorLogin(self):
+        username = login_data._errorLoginData1['username']
+        password = login_data._errorLoginData1['password']
+
+        page = LoginPage.LoginPage.user_login(username, password)
+        sleep(3)
+        errorInfo=page.getErrorMessage()
+        assert 'Your email address or password is incorrect.' not  in errorInfo
+
 if __name__ == '__main__':
     testLogin=Test_loginPage()
     testLogin.test_login1()
+    testLogin.test_errorLogin()

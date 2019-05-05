@@ -15,7 +15,10 @@ class Page(object):
 
     def __init__(self):
         self.base_url=configs._URL
-        self.driver=webdriver.Chrome()
+        option=webdriver.ChromeOptions()
+        option.add_argument('headless')
+        self.driver=webdriver.Chrome(options=option)
+        # self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(30)
 
 

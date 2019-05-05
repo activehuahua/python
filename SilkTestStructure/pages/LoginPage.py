@@ -13,11 +13,16 @@ from pages.po_module import Page
 class LoginPage(Page):
 
     #username_loc=(By.ID,"account")
-    email_loc=(By.ID,"login_email")
+    username_loc=(By.ID,"login_email")
     password_loc=(By.ID,"login_pass")
-    submit_loc=(By.ID,"loginBtn")
+    submit_loc=(By.XPATH,"//input[contains(@type,'submit') and contains(@value,'Sign in')]")
 
-    accoutName_loc=(By.XPATH,"//div[contains(@class,'text-right') and contains(@class,'admin-desc')]/a")
+    #dashboard 的邮箱地址
+    accoutName_loc=(By.ID,"FormField_1_input")
+
+    #账号密码错误提示
+    errormessage_loc=(By.XPATH,"//p[@class='alertBox-column alertBox-message']/span")
+    #class ="alertBox-column alertBox-message
 
     #Action
     def type_username(self,username):
@@ -30,11 +35,15 @@ class LoginPage(Page):
         self.find_element(*self.submit_loc).click()
 
     def getAccoutName(self):
-        return self.find_element(*self.accoutName_loc).text
+        '''获取email值'''
+        return self.find_element(*self.accoutName_loc).get_attribute('value')
 
+    '''获取登录错误提示'''
+    def getErrorMessage(self):
+        return self.find_element(*self.errormessage_loc).text
 
     def user_login(username,password):
-        url='/'
+        url='/login.php'
         login_page=LoginPage()
         login_page._open(url)
         login_page.type_username(username)
