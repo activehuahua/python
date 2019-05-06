@@ -4,8 +4,10 @@
 # @File    : API_GetCompany.py
 # @Software: PyCharm
 # @Desc    :
-
-from api.api_backend_module import API_BackEnd_Page
+# import sys
+# sys.path.append("./b2b_api")
+# sys.path.append("./config")
+from b2b_api.api_backend_module import API_BackEnd_Page
 from config import configs
 import requests
 import json
@@ -34,6 +36,6 @@ class API_GetCompany(API_BackEnd_Page):
 
        r2 = s.get(self.api_url, headers=self.header, cookies=cookies)
 
-       print(r2.text)
+       #print(r2.text)
        content=str(r2.text)
        return content

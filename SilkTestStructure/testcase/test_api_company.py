@@ -4,8 +4,10 @@
 # @File    : test_api_company.py
 # @Software: PyCharm
 # @Desc    :
-
-from api.API_GetCompany import API_GetCompany
+# import sys
+# sys.path.append("./b2b_api")
+# sys.path.append("./data")
+from b2b_api.API_GetCompany import API_GetCompany
 from data  import api_company_data
 import json
 import pytest
@@ -18,7 +20,7 @@ class Test_API_Company():
     api_company.set_param(param)
     api_company.header=api_company_data._headers
     content=api_company.get_catalog_compang()
-    print(content)
+    #print(content)
 
     def test_company_count(self):
         #print(self.content)
@@ -30,7 +32,7 @@ class Test_API_Company():
     def test_catalog_count(self):
         Json = json.loads(self.content)
         count = len(Json['catalogs'])
-        assert count==12
+        assert count==11
 
     def test_company_info(self):
         Json = json.loads(self.content)

@@ -4,7 +4,8 @@
 # @File    : po_module.py
 # @Software: PyCharm
 # @Desc    :
-
+# import sys
+# sys.path.append("./config")
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from time import sleep

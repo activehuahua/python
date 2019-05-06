@@ -7,8 +7,10 @@
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-
-from pages import LoginPage
+# import sys
+# sys.path.append("./data")
+# sys.path.append("./b2b_pages")
+from b2b_pages import LoginPage
 #import pytest
 from time import sleep
 from config import  configs
@@ -35,7 +37,7 @@ class Test_loginPage():
         page = LoginPage.LoginPage.user_login(username, password)
         sleep(3)
         errorInfo=page.getErrorMessage()
-        assert 'Your email address or password is incorrect.' not  in errorInfo
+        assert 'Your email address or password is incorrect.1111' in errorInfo
 
 if __name__ == '__main__':
     testLogin=Test_loginPage()

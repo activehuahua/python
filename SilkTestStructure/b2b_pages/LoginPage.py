@@ -4,11 +4,12 @@
 # @File    : LoginPage.py
 # @Software: PyCharm
 # @Desc    :
-
+# import sys
+# sys.path.append("./b2b_pages")
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from time import sleep
-from pages.po_module import Page
+from b2b_pages.po_module import Page
 
 class LoginPage(Page):
 

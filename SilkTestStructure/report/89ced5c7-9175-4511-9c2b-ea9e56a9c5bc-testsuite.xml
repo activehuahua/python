@@ -1,0 +1,67 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1557106495497" stop="1557106495728">
+  <name>test_api_company</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1557106495497" status="failed" stop="1557106495704">
+      <name>Test_API_Company.test_company_count</name>
+      <failure>
+        <message>AssertionError: assert 35 == 34</message>
+        <stack-trace>self = &lt;test_api_company.Test_API_Company object at 0x0000000004B4EF98&gt;
+
+    def test_company_count(self):
+        #print(self.content)
+        Json=json.loads(self.content)
+        count=len(Json['companylist'])
+&gt;       assert  count ==34
+E       assert 35 == 34
+
+testcase\test_api_company.py:29: AssertionError</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="10120-MainThread"/>
+        <label name="host" value="PC201702091242"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1557106495708" status="passed" stop="1557106495712">
+      <name>Test_API_Company.test_catalog_count</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="10120-MainThread"/>
+        <label name="host" value="PC201702091242"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1557106495716" status="passed" stop="1557106495720">
+      <name>Test_API_Company.test_company_info</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="10120-MainThread"/>
+        <label name="host" value="PC201702091242"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1557106495724" status="passed" stop="1557106495728">
+      <name>Test_API_Company.test_catalog_info</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="10120-MainThread"/>
+        <label name="host" value="PC201702091242"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

@@ -4,7 +4,8 @@
 # @File    : po_module.py
 # @Software: PyCharm
 # @Desc    :
-
+# import sys
+# sys.path.append("./config")
 import requests,json,re
 from time import sleep
 from config import configs
