@@ -19,7 +19,10 @@ from data import login_data
 
 class Test_loginPage():
     def setup(self):
-        self.driver = webdriver.Chrome()
+        option=webdriver.ChromeOptions()
+        option.add_argument('headless')
+        self.driver=webdriver.Chrome(options=option)
+        #self.driver = webdriver.Chrome()
         # driver.implicitly_wait(30)
 
     '''错误用户名和密码登录'''
