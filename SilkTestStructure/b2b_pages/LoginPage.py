@@ -43,11 +43,18 @@ class LoginPage(Page):
     def getErrorMessage(self):
         return self.find_element(*self.errormessage_loc).text
 
-    def user_login(username,password):
+    # def user_login(username,password):
+    #     url='/login.php'
+    #     login_page=LoginPage()
+    #     login_page._open(url)
+    #     login_page.type_username(username)
+    #     login_page.type_password(password)
+    #     login_page.submit()
+    #     return login_page
+
+    def user_login(self,username,password):
         url='/login.php'
-        login_page=LoginPage()
-        login_page._open(url)
-        login_page.type_username(username)
-        login_page.type_password(password)
-        login_page.submit()
-        return login_page
+        self._open(url)
+        self.type_username(username)
+        self.type_password(password)
+        self.submit()

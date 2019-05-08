@@ -18,28 +18,37 @@ from data import login_data
 
 
 class Test_loginPage():
+    def setup(self):
+        self.driver = webdriver.Chrome()
+        # driver.implicitly_wait(30)
 
-    def test_login1(self):
-        username=login_data._admin['username']
-        password=login_data._admin['password']
-
-        page = LoginPage.LoginPage.user_login(username, password)
-        sleep(3)
-        accountName=page.getAccoutName()
-
-        print(accountName)
-        assert accountName==username
+    '''错误用户名和密码登录'''
 
     def test_errorLogin(self):
         username = login_data._errorLoginData1['username']
         password = login_data._errorLoginData1['password']
 
-        page = LoginPage.LoginPage.user_login(username, password)
+        loginPage = LoginPage.LoginPage(self.driver)
+        loginPage.user_login(username, password)
         sleep(3)
-        errorInfo=page.getErrorMessage()
-        assert 'Your email address or password is incorrect.1111' in errorInfo
+        errorInfo = loginPage.getErrorMessage()
+        assert 'Your email address or password is incorrect.' in errorInfo
 
-if __name__ == '__main__':
-    testLogin=Test_loginPage()
-    testLogin.test_login1()
-    testLogin.test_errorLogin()
+
+    '''正确用户名和密码登录'''
+    def test_login1(self):
+        username=login_data._admin['username']
+        password=login_data._admin['password']
+
+        loginPage=LoginPage.LoginPage(self.driver)
+        loginPage.user_login(username,password)
+
+        sleep(3)
+        accountName=loginPage.getAccoutName()
+
+        print(accountName)
+        assert accountName==username
+
+    def teardown(self):
+        self.driver.quit()
+

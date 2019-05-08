@@ -14,13 +14,15 @@ from config import configs
 class Page(object):
 
 
-    def __init__(self):
+    def __init__(self,driver):
         self.base_url=configs._URL
         option=webdriver.ChromeOptions()
         option.add_argument('headless')
-        self.driver=webdriver.Chrome(options=option)
-        # self.driver = webdriver.Chrome()
+        # self.driver=webdriver.Chrome(options=option)
+        #self.driver = webdriver.Chrome()
+        self.driver=driver
         self.driver.implicitly_wait(30)
+        self.driver.maximize_window()
 
 
     def on_page(self):
