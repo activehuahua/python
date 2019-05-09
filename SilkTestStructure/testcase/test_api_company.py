@@ -22,21 +22,24 @@ class Test_API_Company():
     content=api_company.get_catalog_compang()
     #print(content)
 
-    '''验证接口公司数量'''
+
     def test_company_count(self):
+        '''验证接口公司数量'''
         #print(self.content)
         Json=json.loads(self.content)
         count=len(Json['companylist'])
         assert  count ==35
 
-    '''验证接口Catalog数量'''
+
     def test_catalog_count(self):
+        '''验证接口Catalog数量'''
         Json = json.loads(self.content)
         count = len(Json['catalogs'])
         assert count==11
 
-    '''验证接口公司详细数据信息'''
+
     def test_company_info(self):
+        '''验证接口公司详细数据信息'''
         Json = json.loads(self.content)
         id=api_company_data._bruce_company['id']
         for item in range(len(Json['companylist'])):
@@ -48,8 +51,9 @@ class Test_API_Company():
             else:
                 continue
 
-    '''验证接口Catalog详细信息'''
+
     def test_catalog_info(self):
+        '''验证接口Catalog详细信息'''
         Json = json.loads(self.content)
         id = api_company_data._catalog_data['id']
         for item in range(len(Json['catalogs'])):
