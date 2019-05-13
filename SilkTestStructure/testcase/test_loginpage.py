@@ -21,8 +21,8 @@ class Test_loginPage():
     def setup(self):
         option=webdriver.ChromeOptions()
         option.add_argument('headless')
-        self.driver=webdriver.Chrome(options=option)
-        #self.driver = webdriver.Chrome()
+        #self.driver=webdriver.Chrome(options=option)
+        self.driver = webdriver.Chrome()
         # driver.implicitly_wait(30)
 
     '''错误用户名和密码登录'''
@@ -35,7 +35,7 @@ class Test_loginPage():
         loginPage.user_login(username, password)
         sleep(3)
         errorInfo = loginPage.getErrorMessage()
-        assert 'Your email address or password is incorrect.' in errorInfo
+        assert 'Your email address or password is incorrect.11111' in errorInfo
 
 
     '''正确用户名和密码登录'''

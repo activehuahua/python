@@ -13,7 +13,7 @@ class PlaceOrderPage(Page):
 
     #下单
     ContinueButton_loc=(By.ID,"checkout-shipping-continue")
-    PaymentMethod_loc=(By.XPATH,"//div[@class='form-body']/ul/li[4]")
+    PaymentMethod_loc=(By.XPATH,"//div[@class='form-body']/ul/li[3]")
     PaymentMethod_PO_loc=(By.ID,"custom_po_number")
     OrderPrice_loc=(By.XPATH,"//div[@class='product-price optimizedCheckout-contentPrimary']")
     PlaceOrder_loc=(By.ID,"checkout-payment-continue-custom")

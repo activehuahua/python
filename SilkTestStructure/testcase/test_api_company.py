@@ -28,14 +28,14 @@ class Test_API_Company():
         #print(self.content)
         Json=json.loads(self.content)
         count=len(Json['companylist'])
-        assert  count ==35
+        assert  count ==36
 
 
     def test_catalog_count(self):
         '''验证接口Catalog数量'''
         Json = json.loads(self.content)
         count = len(Json['catalogs'])
-        assert count==11
+        assert count==10
 
 
     def test_company_info(self):

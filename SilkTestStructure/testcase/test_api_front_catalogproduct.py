@@ -57,7 +57,7 @@ class Test_API_Front_CatalogProducts():
                 assert Json[item]['company_catalog_id']==apidata._CATALOG_PRODUCT_DETAIL_Single['company_catalog_id']
                 assert Json[item]['store_hash']==apidata._CATALOG_PRODUCT_DETAIL_Single['store_hash']
                 assert Json[item]['variant_id'] == apidata._CATALOG_PRODUCT_DETAIL_Single['variant_id']
-                assert Json[item]['id'] == apidata._CATALOG_PRODUCT_DETAIL_Single['id']
+                # assert Json[item]['id'] == apidata._CATALOG_PRODUCT_DETAIL_Single['id']
                 assert Json[item]['product_id'] == apidata._CATALOG_PRODUCT_DETAIL_Single['product_id']
                 assert Json[item]['tier_price'][0]['price'] == apidata._CATALOG_PRODUCT_DETAIL_Single['price']
                 assert Json[item]['tier_price'][0]['type'] == apidata._CATALOG_PRODUCT_DETAIL_Single[
@@ -92,7 +92,7 @@ class Test_API_Front_CatalogProducts():
                        apidata._CATALOG_PRODUCT_DETAIL[data_sku_pos]['company_catalog_id']
                 assert Json[item]['store_hash'] == apidata._CATALOG_PRODUCT_DETAIL[data_sku_pos]['store_hash']
                 assert Json[item]['variant_id'] == apidata._CATALOG_PRODUCT_DETAIL[data_sku_pos]['variant_id']
-                assert Json[item]['id'] == apidata._CATALOG_PRODUCT_DETAIL[data_sku_pos]['id']
+                # assert Json[item]['id'] == apidata._CATALOG_PRODUCT_DETAIL[data_sku_pos]['id']
                 assert Json[item]['product_id'] == apidata._CATALOG_PRODUCT_DETAIL[data_sku_pos]['product_id']
                 assert Json[item]['tier_price'][0]['price'] == apidata._CATALOG_PRODUCT_DETAIL[data_sku_pos]['price']
                 assert Json[item]['tier_price'][0]['type'] ==apidata._CATALOG_PRODUCT_DETAIL[data_sku_pos]['type']

@@ -47,7 +47,7 @@ class Test_Place_Order():
 
         #check out 页面
         checkout=Place_Order_Page.PlaceOrderPage(self.driver)
-
+        sleep(5)
         #跳转Check Out 页面
         checkout.visit_checkout()
         sleep(5)
@@ -74,4 +74,5 @@ class Test_Place_Order():
 
     def teardown(self):
         self.driver.quit()
+        #pass
 

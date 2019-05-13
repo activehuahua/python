@@ -29,7 +29,7 @@ _CATALOG_PRODUCT_DETAIL=[{
     'variant_sku':	"SKU079",
     'store_hash':	"h3jnjw30qw",
     'variant_id':	187,
-    'id':"14934866149122118121",
+    'id':"3161355532491624937",
     'product_id':223,
     'price':"1399.99",
     'type':"fixed",
@@ -45,7 +45,7 @@ _CATALOG_PRODUCT_DETAIL=[{
     'price':"599.99",
     'type':"fixed",
     'qty':1,
-    'id':"14936872070648041961",
+    'id':"3270713470091334121",
     'product_id':225
 }]
 
