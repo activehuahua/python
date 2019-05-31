@@ -1,0 +1,210 @@
+{
+  "Company": [{
+	"erp_code": "company001",
+	"company_name": "Company ABC 777",
+	"email": "buyer6@company.com",
+	"phone_number": "19490000000",
+	"addresses": [
+		{
+			"address_type" : "register",
+			"address_code" : "address001",
+			"first_name": "Joe",
+			"last_name": "Do",
+			"phone_number": "19490005000",
+			"address_line1": "123 Main Street",
+			"address_line2": "#266",
+			"city": "chengdu1",
+			"state": "sichuan",
+			"zipcode": "610000",
+			"country": "China"
+		},
+		{
+			"address_type" : "shipping",
+			"address_code" : "address0012",
+			"first_name": "Joe2",
+			"last_name": "Do2",
+			"phone_number": "9490005002",
+			"address_line1": "123 Main Street2",
+			"address_line2": "2",
+			"city": "chengdu2",
+			"state": "sichuan2",
+			"zipcode": "610002",
+			"country": "China"
+		},
+		{
+			"address_type" : "billing",
+			"address_code" : "address003",
+			"first_name": "Joe3",
+			"last_name": "Do3",
+			"phone_number": "9490005003",
+			"address_line1": "123 Main Street3",
+			"address_line2": "3",
+			"city": "chengdu3",
+			"state": "sichuan3",
+			"zipcode": "610003s",
+			"country": "China"
+		}
+	],
+	"contacts": [
+		{
+			"code": "contact001",
+			"first_name": "admin",
+			"last_name": "Do",
+			"phone_number": "949004001",
+			"email" : "unique146@company.com",
+			"role": "admin"
+		},
+		{
+			"code": "contact002",
+			"first_name": "senior",
+			"last_name": "Do",
+			"phone_number": "94900031",
+			"email" : "unique156@company.com",
+			"role": "senior_buyer"
+		},
+		{
+			"code": "contact003",
+			"first_name": "Joe3",
+			"last_name": "Do",
+			"phone_number": "949000010",
+			"email" : "unique166@company.com",
+			"role": "junior_buyer"
+		}
+	],
+	"ext_attributes": [
+		{
+			"code": "attr_1",
+			"value": "value_1"
+		},
+		{
+			"code": "attr_2",
+			"value": "value_2"
+		},
+		{
+			"code": "attr_3",
+			"value": "value_3"
+		}
+	],
+	"sales_reps": [
+		{
+			"email": "rep001@mycompany.com",
+			"first_name": "Sales1",
+			"last_name": "Rep1",
+			"phone_number": "90020001"
+		},
+		{
+			"email": "rep002@mycompany.com",
+			"first_name": "Sales2",
+			"last_name": "Rep2",
+			"phone_number": "90020002"
+		}
+	],
+	"allowed_payment_methods": [
+		"Check","Money Order","Pay in Store"
+	]
+},
+	  {
+	"erp_code": "company001",
+	"company_name": "Company ABC 888",
+	"email": "buyer8@company.com",
+	"phone_number": "19490000008",
+	"addresses": [
+		{
+			"address_type" : "register",
+			"address_code" : "address008",
+			"first_name": "Joe8",
+			"last_name": "Do8",
+			"phone_number": "19490005008",
+			"address_line1": "123 Main Street8",
+			"address_line2": "#2668",
+			"city": "chengdu8",
+			"state": "sichuan",
+			"zipcode": "610000",
+			"country": "China"
+		},
+		{
+			"address_type" : "shipping",
+			"address_code" : "address0018",
+			"first_name": "Joe28",
+			"last_name": "Do2",
+			"phone_number": "94900050028",
+			"address_line1": "123 Main Street28",
+			"address_line2": "28",
+			"city": "chengdu28",
+			"state": "sichuan28",
+			"zipcode": "6100028",
+			"country": "China"
+		},
+		{
+			"address_type" : "billing",
+			"address_code" : "address0038",
+			"first_name": "Joe38",
+			"last_name": "Do38",
+			"phone_number": "94900050038",
+			"address_line1": "123 Main Street38",
+			"address_line2": "38",
+			"city": "chengdu38",
+			"state": "sichuan38",
+			"zipcode": "6100038",
+			"country": "China"
+		}
+	],
+	"contacts": [
+		{
+			"code": "contact001",
+			"first_name": "admin8",
+			"last_name": "Do",
+			"phone_number": "9490040018",
+			"email" : "unique1468@company.com",
+			"role": "admin"
+		},
+		{
+			"code": "contact002",
+			"first_name": "senior8",
+			"last_name": "Do8",
+			"phone_number": "94900038",
+			"email" : "unique1568@company.com",
+			"role": "senior_buyer"
+		},
+		{
+			"code": "contact0038",
+			"first_name": "Joe38",
+			"last_name": "Do",
+			"phone_number": "949000018",
+			"email" : "unique1668@company.com",
+			"role": "junior_buyer"
+		}
+	],
+	"ext_attributes": [
+		{
+			"code": "attr_1",
+			"value": "value_1"
+		},
+		{
+			"code": "attr_2",
+			"value": "value_2"
+		},
+		{
+			"code": "attr_3",
+			"value": "value_3"
+		}
+	],
+	"sales_reps": [
+		{
+			"email": "rep0018@mycompany.com",
+			"first_name": "Sales1",
+			"last_name": "Rep1",
+			"phone_number": "900200018"
+		},
+		{
+			"email": "rep0028@mycompany.com",
+			"first_name": "Sales2",
+			"last_name": "Rep2",
+			"phone_number": "900200028"
+		}
+	],
+	"allowed_payment_methods": [
+		"Check","Money Order","Pay in Store"
+	]
+}
+]}

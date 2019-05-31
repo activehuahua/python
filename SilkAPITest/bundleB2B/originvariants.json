@@ -1,0 +1,64 @@
+{
+	"products": [
+		{
+		"erp_code" : "9274190684690911721",
+		"name": "import murphy",
+		"description": "murphy test1",
+		"products": [
+          {
+            "sskkuu1": [
+              {"qty": 1,"price":100,"type": "fixed"},
+              {"qty": 10,"price": 90,"type": "fixed"},
+              {"qty": 20,"price": 80,"type": "fixed"}
+            ],
+            "sskkuu2": [
+              {"qty": 1,"price": 199,"type": "fixed"},
+              {"qty": 100,"price": 190,"type": "fixed"},
+              {"qty": 200,"price": 180,"type": "fixed"}
+            ],
+            "sskkuu3": [
+              {"qty": 1,"price": 199,"type": "fixed"},
+              {"qty": 10,"price": 180,"type": "fixed"},
+              {"qty": 20,"price": 170,"type": "fixed"}
+            ],
+            "sskkuu4": [
+              {"qty": 1,"price": 999,"type": "fixed"},
+              {"qty": 20,"price": 980,"type": "fixed"},
+              {"qty": 30,"price": 970,"type": "fixed"}
+            ]
+          }
+		],
+		"company": ["Jeff company test's update 1","ACAC Corp","create company test"]
+		},
+      {
+		"erp_code" : "9274190684690911721",
+		"name": "IMPORT",
+		"description": "murphy test2",
+		"products": [
+          {
+            "sskkuu4": [
+              {"qty": 1,"price":100,"type": "fixed"},
+              {"qty": 10,"price": 90,"type": "fixed"},
+              {"qty": 20,"price": 80,"type": "fixed"}
+            ],
+            "sskkuu3": [
+              {"qty": 1,"price": 199,"type": "fixed"},
+              {"qty": 100,"price": 190,"type": "fixed"},
+              {"qty": 200,"price": 180,"type": "fixed"}
+            ],
+            "sskkuu2": [
+              {"qty": 1,"price": 199,"type": "fixed"},
+              {"qty": 10,"price": 180,"type": "fixed"},
+              {"qty": 20,"price": 170,"type": "fixed"}
+            ],
+            "sskkuu1": [
+              {"qty": 1,"price": 999,"type": "fixed"},
+              {"qty": 20,"price": 980,"type": "fixed"},
+              {"qty": 30,"price": 970,"type": "fixed"}
+            ]
+          }
+		],
+		"company": ["murphy001","nnn","Fred Bai Test"]
+		}
+	]
+}
