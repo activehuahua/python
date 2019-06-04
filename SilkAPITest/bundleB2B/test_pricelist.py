@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# @Time    : 2019/5/29 11:27
+# @Time    : 2019/6/4 11:01
 # @Author  : zhaojianghua
-# @File    : companyAPI.py
+# @File    : test_pricelist.py
 # @Software: PyCharm
-# @Desc    : 测试ERP Company数据导入接口
+# @Desc    :
 import json
 
 import requests
@@ -11,16 +11,17 @@ import base64
 from time import sleep
 import pytest
 
+
 #DEv
-# URL='https://fl4mq0bm40.execute-api.us-west-2.amazonaws.com/prod'
-# Store_hash='h3jnjw30qw'
+URL='https://fl4mq0bm40.execute-api.us-west-2.amazonaws.com/prod'
+Store_hash='h3jnjw30qw'
 
 #Staging
-URL='https://dk0xoldgn8.execute-api.us-west-2.amazonaws.com/prod'
-Store_hash='wao5z0rn37'
+# URL='https://dk0xoldgn8.execute-api.us-west-2.amazonaws.com/prod'
+# Store_hash='wao5z0rn37'
 
 
-Filename='company.json'
+Filename='originvariants.json'
 CompanyName='Company Alex 8'
 CompanyNames='Company Alex 8,Alex Staging Company'
 
@@ -38,11 +39,11 @@ param={
 }
 
 
-def test_importCompany():
+def test_importPriceList():
     '''导入json文件'''
     s=requests.Session()
     print(param)
-    r=s.post(URL+'/companyLead',data=json.dumps(param))
+    r=s.post(URL+'/catalogProductLead',data=json.dumps(param))
 
     id=parseId(r.text)
     sleep(10)
@@ -79,49 +80,49 @@ def checkResult(id):
     status=parseStatus(r.text)
     return status
 
-def test_export_single_Company():
-    '''单公司导出'''
-    param = {
-        "store_hash": Store_hash,
-        "companyNames": CompanyName
-    }
-    r = requests.get(URL + '/companyLead', params=param)
-    #print(r.content)
-    id=parseId(r.text)
-    #print('id=',id)
-    sleep(15)
-    status=checkResult(id)
-    assert status=='1'
-
-
-def test_export_many_Company():
-    '''多公司导出'''
-    param = {
-        "store_hash": Store_hash,
-        "companyNames": CompanyNames
-    }
-    r = requests.get(URL + '/companyLead', params=param)
-    print(r.content)
-    id=parseId(r.text)
-    print('id=',id)
-    sleep(5)
-    status = checkResult(id)
-    assert status == '1'
-
-def test_export_all_Companys():
-    '''多公司导出'''
-    param = {
-        "store_hash": Store_hash,
-        "companyNames": ''
-    }
-    r = requests.get(URL + '/companyLead', params=param)
-    print(r.content)
-    id=parseId(r.text)
-    print('id=',id)
-    sleep(15)
-    status = checkResult(id)
-    assert status == '1'
-
+# def test_export_single_Company():
+#     '''单公司导出'''
+#     param = {
+#         "store_hash": Store_hash,
+#         "companyNames": CompanyName
+#     }
+#     r = requests.get(URL + '/companyLead', params=param)
+#     #print(r.content)
+#     id=parseId(r.text)
+#     #print('id=',id)
+#     sleep(15)
+#     status=checkResult(id)
+#     assert status=='1'
+#
+#
+# def test_export_many_Company():
+#     '''多公司导出'''
+#     param = {
+#         "store_hash": Store_hash,
+#         "companyNames": CompanyNames
+#     }
+#     r = requests.get(URL + '/companyLead', params=param)
+#     print(r.content)
+#     id=parseId(r.text)
+#     print('id=',id)
+#     sleep(5)
+#     status = checkResult(id)
+#     assert status == '1'
+#
+# def test_export_all_Companys():
+#     '''多公司导出'''
+#     param = {
+#         "store_hash": Store_hash,
+#         "companyNames": ''
+#     }
+#     r = requests.get(URL + '/companyLead', params=param)
+#     print(r.content)
+#     id=parseId(r.text)
+#     print('id=',id)
+#     sleep(15)
+#     status = checkResult(id)
+#     assert status == '1'
+#
 
 def test_checkData():
     id=13462184510309732841

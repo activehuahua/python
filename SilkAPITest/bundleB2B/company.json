@@ -1,9 +1,9 @@
 {
   "Company": [{
 	"erp_code": "company001",
-	"company_name": "Company ABC 777",
-	"email": "buyer6@company.com",
-	"phone_number": "19490000000",
+	"company_name": "Company Alex 82",
+	"email": "buyer1116@company.com",
+	"phone_number": "19490000111",
 	"addresses": [
 		{
 			"address_type" : "register",
@@ -13,7 +13,7 @@
 			"phone_number": "19490005000",
 			"address_line1": "123 Main Street",
 			"address_line2": "#266",
-			"city": "chengdu1",
+			"city": "chengdu2",
 			"state": "sichuan",
 			"zipcode": "610000",
 			"country": "China"
@@ -38,7 +38,7 @@
 			"first_name": "admin",
 			"last_name": "Do",
 			"phone_number": "949004001",
-			"email" : "unique146@company.com",
+			"email" : "alex146@company.com",
 			"role": "admin"
 		},
 		{
@@ -46,8 +46,16 @@
 			"first_name": "senior",
 			"last_name": "Do",
 			"phone_number": "94900031",
-			"email" : "unique156@company.com",
+			"email" : "alex156@company.com",
 			"role": "senior_buyer"
+		},
+				{
+			"code": "contact003",
+			"first_name": "senior",
+			"last_name": "Do",
+			"phone_number": "94900041",
+			"email" : "alex157@company.com",
+			"role": "junior_buyer"
 		}
 
 	],
@@ -64,10 +72,16 @@
 	"sales_reps": [
 
 		{
-			"email": "rep002@mycompany.com",
+			"email": "rep111002@mycompany.com",
 			"first_name": "Sales2",
 			"last_name": "Rep2",
 			"phone_number": "90020002"
+		},
+				{
+			"email": "rep111001@mycompany.com",
+			"first_name": "Sales1",
+			"last_name": "Rep1",
+			"phone_number": "90020001"
 		}
 	],
 	"allowed_payment_methods": [
