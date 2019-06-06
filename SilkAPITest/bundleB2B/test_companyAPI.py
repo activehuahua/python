@@ -20,9 +20,9 @@ URL='https://dk0xoldgn8.execute-api.us-west-2.amazonaws.com/prod'
 Store_hash='wao5z0rn37'
 
 
-Filename='company.json'
+Filename='export_company__2019_06_06_06_03_16.json'
 CompanyName='Company Alex 8'
-CompanyNames='Company Alex 8,Alex Staging Company'
+CompanyNames='Company Alex 8,Ferrell Zhang'
 
 def getBase64Content():
 
@@ -124,7 +124,7 @@ def test_export_all_Companys():
 
 
 def test_checkData():
-    id=13462184510309732841
+    id=373936313376838121
     param={
         "store_hash": Store_hash,
         "id":id

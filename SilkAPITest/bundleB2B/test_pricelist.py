@@ -44,7 +44,7 @@ def test_importPriceList():
     s=requests.Session()
     print(param)
     r=s.post(URL+'/catalogProductLead',data=json.dumps(param))
-
+    print(r.text)
     id=parseId(r.text)
     sleep(10)
     status = checkResult(id)

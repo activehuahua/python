@@ -1,7 +1,7 @@
 {
   "Company": [{
 	"erp_code": "company001",
-	"company_name": "Company Alex 82",
+	"company_name": "Company Alex 8",
 	"email": "buyer1116@company.com",
 	"phone_number": "19490000111",
 	"addresses": [
@@ -12,8 +12,8 @@
 			"last_name": "Do",
 			"phone_number": "19490005000",
 			"address_line1": "123 Main Street",
-			"address_line2": "#266",
-			"city": "chengdu2",
+			"address_line2": "#266 address_line2222",
+			"city": "chengdu222",
 			"state": "sichuan",
 			"zipcode": "610000",
 			"country": "China"

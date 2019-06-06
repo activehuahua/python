@@ -1,0 +1,180 @@
+{
+  "Company": [{
+	"erp_code": "company001",
+	"company_name": "Company Alex 1",
+	"email": "buyer0605@company.com",
+	"phone_number": "194900001222",
+	"addresses": [
+		{
+			"address_type" : "register",
+			"address_code" : "address001",
+			"first_name": "Joe",
+			"last_name": "Do",
+			"phone_number": "19490005111",
+			"address_line1": "123 Main Street",
+			"address_line2": "#266 address_line2",
+			"city": "chengdu",
+			"state": "sichuan",
+			"zipcode": "610000",
+			"country": "China"
+		},
+		{
+			"address_type" : "shipping",
+			"address_code" : "address0012",
+			"first_name": "Joe2",
+			"last_name": "Do2",
+			"phone_number": "9490005002",
+			"address_line1": "123 Main Street2",
+			"address_line2": "2",
+			"city": "chengdu2",
+			"state": "sichuan2",
+			"zipcode": "610002",
+			"country": "China"
+		}
+	],
+	"contacts": [
+		{
+			"code": "contact001",
+			"first_name": "admin",
+			"last_name": "Do",
+			"phone_number": "949004001",
+			"email" : "alex0605001@company.com",
+			"role": "admin"
+		},
+		{
+			"code": "contact002",
+			"first_name": "senior",
+			"last_name": "Do",
+			"phone_number": "94900031",
+			"email" : "alex0605002@company.com",
+			"role": "senior_buyer"
+		},
+				{
+			"code": "contact003",
+			"first_name": "senior",
+			"last_name": "Do",
+			"phone_number": "94900041",
+			"email" : "alex0605003@company.com",
+			"role": "junior_buyer"
+		}
+
+	],
+	"ext_attributes": [
+		{
+			"code": "attr_1",
+			"value": "value_1"
+		},
+		{
+			"code": "attr_2",
+			"value": "value_2"
+		}
+	],
+	"sales_reps": [
+
+		{
+			"email": "rep0605001@mycompany.com",
+			"first_name": "Sales2",
+			"last_name": "Rep2",
+			"phone_number": "90020002"
+		},
+				{
+			"email": "rep0605002@mycompany.com",
+			"first_name": "Sales1",
+			"last_name": "Rep1",
+			"phone_number": "90020001"
+		}
+	],
+	"allowed_payment_methods": [
+		"Check","Money Order"
+	]
+},
+{
+	"erp_code": "company001",
+	"company_name": "Company Alex 2",
+	"email": "buyer0605@company.com",
+	"phone_number": "194900001333",
+	"addresses": [
+		{
+			"address_type" : "register",
+			"address_code" : "address001",
+			"first_name": "Joe",
+			"last_name": "Do",
+			"phone_number": "19490005111",
+			"address_line1": "1231111 Main Street",
+			"address_line2": "#266 111address_line2",
+			"city": "chengdu",
+			"state": "sichuan",
+			"zipcode": "610000",
+			"country": "China"
+		},
+		{
+			"address_type" : "shipping",
+			"address_code" : "address0012",
+			"first_name": "Joe2",
+			"last_name": "Do2",
+			"phone_number": "9490005002",
+			"address_line1": "123 Main Street2",
+			"address_line2": "2",
+			"city": "chengdu2",
+			"state": "sichuan2",
+			"zipcode": "610002",
+			"country": "China"
+		}
+	],
+	"contacts": [
+		{
+			"code": "contact001",
+			"first_name": "admin",
+			"last_name": "Do",
+			"phone_number": "949004001",
+			"email" : "alex10605001@company.com",
+			"role": "admin"
+		},
+		{
+			"code": "contact002",
+			"first_name": "senior",
+			"last_name": "Do",
+			"phone_number": "94900031",
+			"email" : "alex10605002@company.com",
+			"role": "senior_buyer"
+		},
+				{
+			"code": "contact003",
+			"first_name": "senior",
+			"last_name": "Do",
+			"phone_number": "94900041",
+			"email" : "alex10605003@company.com",
+			"role": "junior_buyer"
+		}
+
+	],
+	"ext_attributes": [
+		{
+			"code": "attr_1",
+			"value": "value_1"
+		},
+		{
+			"code": "attr_2",
+			"value": "value_2"
+		}
+	],
+	"sales_reps": [
+
+		{
+			"email": "rep10605001@mycompany.com",
+			"first_name": "Sales2",
+			"last_name": "Rep2",
+			"phone_number": "90020002"
+		},
+				{
+			"email": "rep10605002@mycompany.com",
+			"first_name": "Sales1",
+			"last_name": "Rep1",
+			"phone_number": "90020001"
+		}
+	],
+	"allowed_payment_methods": [
+		"Check","Money Order"
+	]
+}
+]}
