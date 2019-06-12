@@ -20,7 +20,7 @@ URL='https://dk0xoldgn8.execute-api.us-west-2.amazonaws.com/prod'
 Store_hash='wao5z0rn37'
 
 
-Filename='export_company__2019_06_06_06_03_16.json'
+Filename='company.json'
 CompanyName='Company Alex 8'
 CompanyNames='Company Alex 8,Ferrell Zhang'
 
@@ -40,9 +40,11 @@ param={
 
 def test_importCompany():
     '''导入json文件'''
+    #global URL
     s=requests.Session()
     print(param)
-    r=s.post(URL+'/companyLead',data=json.dumps(param))
+    r=requests.post(URL+'/companyLead',data=json.dumps(param))
+    print(r.url)
 
     id=parseId(r.text)
     sleep(10)
@@ -134,3 +136,7 @@ def test_checkData():
     print(r.content)
     status=parseStatus(r.text)
     assert status == '1'
+
+
+if __name__ == '__main__':
+    test_importCompany()

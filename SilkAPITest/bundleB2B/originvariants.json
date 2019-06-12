@@ -2,23 +2,42 @@
 	"products": [
 		{
 		"erp_code" : "9274190684690911721",
-		"name": "Alex Catalog",
+		"name": "kobeTest1",
 		"description": "murphy test1",
 		"products": [
           {
-            "SKU079": [
-              {"qty": 1,"price": 1299,"type": "fixed"},
-              {"qty": 2,"price": 1280,"type": "fixed"},
-              {"qty": 3,"price": 1270,"type": "fixed"}
+            "CLC-01": [
+
+				{"qty": 1,"price": 10,"type": "percent discount"},
+				{"qty": 2,"price": 20,"type": "percent discount"},
+				{"qty": 2,"price": 40,"type": "percent discount"}
             ],
-            "SKU081": [
-              {"qty": 10,"price": 10,"type": "percent discount"},
-              {"qty": 20,"price": 20,"type": "percent discount"},
-              {"qty": 30,"price": 30,"type": "percent discount"}
+			  "CGLD": [
+
+				{"qty": 1,"price": 26.55,"type": "fixed"},
+				{"qty":2,"price": 27.55,"type": "fixed"},
+				{"qty": 3,"price": 24.55,"type": "fixed"}
             ]
           }
 		],
 		"company": [""]
+		}
+      ,
+      {
+		"erp_code" : "9274190684690911722",
+		"name": "AlexTest1",
+		"description": "Alex Catalog Test333222 11111",
+		"products": [
+          {
+            "CLC-02": [
+              {"qty": 1,"price": 200,"type": "fixed"},
+              {"qty": 2,"price": 199,"type": "fixed"},
+              {"qty": 3,"price": 198,"type": "fixed"},
+              {"qty": 4,"price": 197,"type": "fixed"}
+            ]
+          }
+		],
+		"company": ["Company Alex 26"]
 		}
 	]
 }

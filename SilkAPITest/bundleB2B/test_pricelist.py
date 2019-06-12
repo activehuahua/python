@@ -13,12 +13,12 @@ import pytest
 
 
 #DEv
-URL='https://fl4mq0bm40.execute-api.us-west-2.amazonaws.com/prod'
-Store_hash='h3jnjw30qw'
+# URL='https://fl4mq0bm40.execute-api.us-west-2.amazonaws.com/prod'
+# Store_hash='h3jnjw30qw'
 
 #Staging
-# URL='https://dk0xoldgn8.execute-api.us-west-2.amazonaws.com/prod'
-# Store_hash='wao5z0rn37'
+URL='https://dk0xoldgn8.execute-api.us-west-2.amazonaws.com/prod'
+Store_hash='wao5z0rn37'
 
 
 Filename='originvariants.json'
