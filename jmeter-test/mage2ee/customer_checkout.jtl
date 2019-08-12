@@ -1,0 +1,19 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1554964119150,2022,Open Home Page,200,OK,线程组 1-1,text,true,,81395,344,1,1,http://mage2ee.silksoftware.net/,672,0,227
+1554964123447,1994,Open Login Page,200,OK,线程组 1-1,text,true,,46470,421,1,1,http://mage2ee.silksoftware.net/default/customer/account/login/,1306,0,232
+1554964126681,4018,Login,200,OK,线程组 1-1,text,true,,65885,1221,1,1,http://mage2ee.silksoftware.net/default/customer/account/,1501,0,232
+1554964126681,1501,Login-0,302,Found,线程组 1-1,text,true,,1364,635,1,1,http://mage2ee.silksoftware.net/default/customer/account/loginPost/,1501,0,232
+1554964128183,2516,Login-1,200,OK,线程组 1-1,text,true,,64521,586,1,1,http://mage2ee.silksoftware.net/default/customer/account/,1594,0,0
+1554964133689,1831,Men Page 请求,200,OK,线程组 1-1,text,true,,84582,577,1,1,http://mage2ee.silksoftware.net/default/men.html,680,0,234
+1554964138016,4218,搜索商品,200,OK,线程组 1-1,text,true,,131579,618,1,1,http://mage2ee.silksoftware.net/default/catalogsearch/result/?q=Vulcan+Weightlifting+Tank,2646,0,226
+1554964145061,2013,商品详情,200,OK,线程组 1-1,text,true,,105323,596,1,1,http://mage2ee.silksoftware.net/default/argus-all-weather-tank.html,669,0,227
+1554964149331,5318,Add Product to Cart,200,OK,线程组 1-1,text,true,,138375,1329,1,1,http://mage2ee.silksoftware.net/default/checkout/cart/,1164,0,233
+1554964149331,1164,Add Product to Cart-0,302,Found,线程组 1-1,text,true,,843,712,1,1,http://mage2ee.silksoftware.net/default/checkout/cart/add?product=701&form_key=y7qzVryPbjPLoeg3&qty=1&super_attribute[93]=52&super_attribute[160]=179,1164,0,233
+1554964150496,4153,Add Product to Cart-1,200,OK,线程组 1-1,text,true,,137532,617,1,1,http://mage2ee.silksoftware.net/default/checkout/cart/,2081,0,0
+1554964156648,1789,Load Cart,200,OK,线程组 1-1,text,true,,2581,703,1,1,"http://mage2ee.silksoftware.net/default/customer/section/load/?sections=cart,messages&update_section_id=false&_=2019-04-11T14:29:16.647+0800",1789,0,235
+1554964161529,11633,Check out,200,OK,线程组 1-1,text,true,,965059,578,1,1,http://mage2ee.silksoftware.net/default/checkout/,2902,0,225
+1554964175287,1637,Shopping Methods,200,OK,线程组 1-1,text,true,,849,694,1,1,http://mage2ee.silksoftware.net/default/rest/default/V1/carts/mine/estimate-shipping-methods-by-address-id,1637,0,225
+1554964178983,2193,Shipping Information,200,OK,线程组 1-1,text,true,,2624,1321,1,1,http://mage2ee.silksoftware.net/default/rest/default/V1/carts/mine/shipping-information,2193,0,232
+1554964183758,5263,Payment Information,200,OK,线程组 1-1,text,true,,426,1146,1,1,http://mage2ee.silksoftware.net/default/rest/default/V1/carts/mine/payment-information,5263,0,234
+1554964190475,2008,Checkout Success,200,OK,线程组 1-1,text,true,,53684,594,1,1,http://mage2ee.silksoftware.net/default/checkout/onepage/success/,1332,0,226
+1554964193486,1,调试取样器,200,OK,线程组 1-1,text,true,,1291,0,1,1,null,0,0,0
