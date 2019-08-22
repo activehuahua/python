@@ -47,4 +47,5 @@ APPList= {
 
 filepath=r'D:\\Alex\\SilkSoftware\\项目\\H&M\\测试文档\\BUG统计\\'
 
-sendTo=  ['alexander.zhao@silksoftware.com','164033495@qq.com']
+sendTo=  ['alexander.zhao@silksoftware.com']
+sendCc=  ['164033495@qq.com']

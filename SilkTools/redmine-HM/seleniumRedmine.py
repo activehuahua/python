@@ -85,7 +85,7 @@ class SeleniumRedmine(object):
         newfile = CF.filepath + newfile
         workbook.save(newfile)
 
-        SENDMAIL(CF.sendTo, newfile)
+        SENDMAIL(CF.sendTo,CF.sendCc, newfile)
 
 
 if __name__ == '__main__':

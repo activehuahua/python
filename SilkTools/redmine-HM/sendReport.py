@@ -11,7 +11,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 
-def SENDMAIL(to, filename):
+def SENDMAIL(to,cc, filename):
     print("开始发送邮件.....")
     # 邮件用户
     _user = 'alexander.zhao@silksoftware.com'
@@ -22,6 +22,7 @@ def SENDMAIL(to, filename):
     msg["Subject"] = '主题：H&M Bug统计'
     msg["From"] = _user
     msg["To"] = ",".join(to)
+    msg["cc"] = ",".join(cc)
     #抄送
     #msg["Cc"] = ",".join(to)
 
@@ -40,6 +41,9 @@ def SENDMAIL(to, filename):
 
     s = smtplib.SMTP("mbox.silksoftware.com", timeout=60)  # 连接smtp邮件服务器,端口默认是25
     s.login(_user, _pwd)  # 登陆服务器
+
+    receive=to
+    receive.extend(cc)
     s.sendmail(_user, to, msg.as_string())  # 发送邮件
     s.close()
     print("邮件发送完毕！")
