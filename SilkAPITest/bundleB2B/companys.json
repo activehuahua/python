@@ -1,9 +1,9 @@
 {
   "Company": [{
 	"erp_code": "company001",
-	"company_name": "Company Alex 1",
-	"email": "buyer0605@company.com",
-	"phone_number": "194900001222",
+	"company_name": "Company Alex 6",
+	"email": "buyer0610@company.com",
+	"phone_number": "194900001666",
 	"addresses": [
 		{
 			"address_type" : "register",
@@ -13,7 +13,7 @@
 			"phone_number": "19490005111",
 			"address_line1": "123 Main Street",
 			"address_line2": "#266 address_line2",
-			"city": "chengdu",
+			"city": "chengdu1",
 			"state": "sichuan",
 			"zipcode": "610000",
 			"country": "China"
@@ -38,7 +38,7 @@
 			"first_name": "admin",
 			"last_name": "Do",
 			"phone_number": "949004001",
-			"email" : "alex0605001@company.com",
+			"email" : "alex0610001@company.com",
 			"role": "admin"
 		},
 		{
@@ -46,7 +46,7 @@
 			"first_name": "senior",
 			"last_name": "Do",
 			"phone_number": "94900031",
-			"email" : "alex0605002@company.com",
+			"email" : "alex0610002@company.com",
 			"role": "senior_buyer"
 		},
 				{
@@ -54,7 +54,7 @@
 			"first_name": "senior",
 			"last_name": "Do",
 			"phone_number": "94900041",
-			"email" : "alex0605003@company.com",
+			"email" : "alex0610003@company.com",
 			"role": "junior_buyer"
 		}
 
@@ -72,13 +72,13 @@
 	"sales_reps": [
 
 		{
-			"email": "rep0605001@mycompany.com",
+			"email": "rep0610001@mycompany.com",
 			"first_name": "Sales2",
 			"last_name": "Rep2",
 			"phone_number": "90020002"
 		},
 				{
-			"email": "rep0605002@mycompany.com",
+			"email": "rep0610002@mycompany.com",
 			"first_name": "Sales1",
 			"last_name": "Rep1",
 			"phone_number": "90020001"
@@ -90,8 +90,8 @@
 },
 {
 	"erp_code": "company001",
-	"company_name": "Company Alex 2",
-	"email": "buyer0605@company.com",
+	"company_name": "Company Alex 27",
+	"email": "buyer0610@company.com",
 	"phone_number": "194900001333",
 	"addresses": [
 		{
@@ -127,7 +127,7 @@
 			"first_name": "admin",
 			"last_name": "Do",
 			"phone_number": "949004001",
-			"email" : "alex10605001@company.com",
+			"email" : "alex10610001@company.com",
 			"role": "admin"
 		},
 		{
@@ -135,7 +135,7 @@
 			"first_name": "senior",
 			"last_name": "Do",
 			"phone_number": "94900031",
-			"email" : "alex10605002@company.com",
+			"email" : "alex10610002@company.com",
 			"role": "senior_buyer"
 		},
 				{
@@ -143,7 +143,7 @@
 			"first_name": "senior",
 			"last_name": "Do",
 			"phone_number": "94900041",
-			"email" : "alex10605003@company.com",
+			"email" : "alex10610003@company.com",
 			"role": "junior_buyer"
 		}
 
@@ -161,7 +161,7 @@
 	"sales_reps": [
 
 		{
-			"email": "rep10605001@mycompany.com",
+			"email": "rep10610001@mycompany.com",
 			"first_name": "Sales2",
 			"last_name": "Rep2",
 			"phone_number": "90020002"
