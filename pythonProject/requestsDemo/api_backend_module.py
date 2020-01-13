@@ -7,7 +7,7 @@
 
 import requests,json,re
 from time import sleep
-import configs
+#import configs
 
 class API_BackEnd_Page(object):
 
