@@ -9,6 +9,6 @@
 
 i=0
 arr=[0,1,2]
-for i in range(4):
+for i in range(3):
     arr[i]=0
     print("Hello world")
