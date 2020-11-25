@@ -39,7 +39,9 @@ def SENDMAIL(to,cc, filename):
     part.add_header('Content-Disposition', 'attachment', filename=filename)
     msg.attach(part)
 
-    s = smtplib.SMTP("mbox.silksoftware.com", timeout=60)  # 连接smtp邮件服务器,端口默认是25
+    s = smtplib.SMTP("mbox.silksoftware.com", 587)  # 连接smtp邮件服务器,端口默认是25
+    s.starttls()
+    #s.set_debuglevel(1)
     s.login(_user, _pwd)  # 登陆服务器
 
     receive=to
@@ -49,6 +51,7 @@ def SENDMAIL(to,cc, filename):
     print("邮件发送完毕！")
 
 if __name__ == '__main__':
-    to=['alexander.zhao@silksoftware.com']
-    filename="../report/report.html"
-    SENDMAIL(to,filename)
+    to=['164033495@qq.com']
+    cc=['alexander.zhao@silksoftware.com']
+    filename="config.py"
+    SENDMAIL(to,to,filename)
