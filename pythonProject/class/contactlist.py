@@ -1,5 +1,6 @@
 import pickle
 
+
 class Contact:
     def __init__(self, name, tel, sex):
         self.name = name
@@ -7,9 +8,7 @@ class Contact:
         self.sex = sex
 
     def showDetail(self):
-        return [self.name,self.tel,self.sex]
-
-
+        return [self.name, self.tel, self.sex]
 
 
 contacts = []
@@ -29,4 +28,3 @@ contacts = pickle.load(f)
 
 for i in contacts:
     print(i.showDetail())
-

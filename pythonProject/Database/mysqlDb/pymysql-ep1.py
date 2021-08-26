@@ -9,9 +9,9 @@
 from functools import wraps
 from venv import logger
 
-import pymysql
+import pymysql, pytest
 from datetime import datetime
-import db_conf
+from Database.mysqlDb import db_conf
 
 
 # 数据库配置信息
@@ -23,7 +23,7 @@ def fn_timer(fn):
     :return:
     """
 
-    @wraps(fn) #装饰器
+    @wraps(fn)  # 装饰器
     def function_timer(*args, **kwargs):
         start = datetime.now()
         result = fn(*args, **kwargs)
@@ -34,7 +34,7 @@ def fn_timer(fn):
 
 
 @fn_timer
-def test_execute(connection, sql):
+def mtest_execute(connection, sql):
     rows_count = 0
     with connection.cursor(pymysql.cursors.DictCursor) as cursor:
         for i in range(1000):
@@ -45,7 +45,7 @@ def test_execute(connection, sql):
 
 
 @fn_timer
-def test_execute_many(connection, sql):
+def mtest_execute_many(connection, sql):
     with connection.cursor(pymysql.cursors.DictCursor) as cursor:
         datas = [('webmaster@python.org', 'test' + str(i)) for i in range(1, 1000)]
         rows_count = cursor.executemany(sql, datas)
@@ -57,6 +57,8 @@ def test_execute_many(connection, sql):
 if __name__ == '__main__':
     insert_sql = "INSERT INTO `users` (`email`, `password`) VALUES (%s, %s)"
     connection = pymysql.connect(**db_conf.TESTDB_CONFIG)
+    # connection = pymysql.connect(host='localhost', port=3306, user='root',
+    #                              password='Mi123456', db='sakila', charset='utf8')
 
-    test_execute(connection, insert_sql)
-    test_execute_many(connection, insert_sql)
+    mtest_execute(connection, insert_sql)
+    mtest_execute_many(connection, insert_sql)

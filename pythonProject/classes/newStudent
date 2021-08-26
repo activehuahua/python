@@ -1,0 +1,16 @@
+class newStudent:
+    # def __init__(self):
+
+    def getScore(self):
+        return self.__score
+
+    def setScore(self,value):
+        if not isinstance(value,(float,int)):
+            raise ValueError('Score must be a fload or int.')
+        if value<0 or value>100:
+            raise ValueError('Score must between 0~100')
+        self.__score=value
+
+s=newStudent()
+s.setScore(98)
+print(s.getScore())

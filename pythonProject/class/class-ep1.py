@@ -22,18 +22,19 @@ class people:
         self.__weight = w
 
     def speak(self):
-        print("%s 说: 我 %d 岁。 我体重%d " % (self.name, self.age,self.__weight))
+        print("%s 说: 我 %d 岁。 我体重%d " % (self.name, self.age, self.__weight))
 
 
 # 单继承示例
 class student(people):
     grade = ''
     __weight = 0
+
     def __init__(self, n, a, w, g):
         # 调用父类的构函
         people.__init__(self, n, a, w)
         self.grade = g
-        self.__weight=w
+        self.__weight = w
 
     # 覆写父类的方法
     def speak(self):

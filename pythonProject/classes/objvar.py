@@ -14,7 +14,6 @@ class Robot:
         # adds to the population
         Robot.population += 1
 
-
     def __del__(self):
 
         '''I am dying.'''
@@ -26,11 +25,9 @@ class Robot:
             print('{0} was the last one.'.format(self.name))
         else:
             print('There are still {0:d} robots working.'.format(
-            Robot.population))
-
+                Robot.population))
 
     def sayHi(self):
-
 
         '''Greeting by the robot.
 
@@ -40,11 +37,11 @@ class Robot:
     @staticmethod
     def howMany():
 
-
         '''Prints the current population.'''
         print('We have {0:d} robots.'.format(Robot.population))
 
-   # howMany = staticmethod(howMany)
+
+# howMany = staticmethod(howMany)
 
 droid1 = Robot('R2-D2')
 droid1.sayHi()
@@ -58,7 +55,7 @@ print("\nRobots can do some work here.\n")
 
 print("Robots have finished their work. So let's destroy them.")
 
-del droid1
-del droid2
+# del droid1
+# del droid2
 
 Robot.howMany()

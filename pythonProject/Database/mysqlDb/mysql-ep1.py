@@ -7,13 +7,13 @@
 @desc   :
 '''
 
-import db_conf
+from Database.mysqlDb import db_conf
 
 mycusor=db_conf.mydb_test.cursor()
-sql="insert into issuess(`issue`,`release`,`author`) values (%s,%s,%s)"
+sql="insert into issuess(`release`,`author`) values (%s,%s)"
 val=[
-    (12,'11.0.0','alex1'),
-    (13,'11.0.1','alex2')
+    ('11.0.2','alex1'),
+    ('11.0.3','alex2')
 ]
 mycusor.executemany(sql,val)
 db_conf.mydb_test.commit()

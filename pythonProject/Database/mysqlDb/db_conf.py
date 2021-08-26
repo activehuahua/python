@@ -10,17 +10,17 @@
 import mysql.connector
 import pymysql
 mydb_test= mysql.connector.Connect(
-    host='172.28.1.247',
+    host='localhost',
     user='root',
-    passwd='kzO2Rgel6xs80a3JYKB2',
-    database='test'
+    passwd='Mi123456',
+    database='sakila'
 )
 
 TESTDB_CONFIG = {
-    'host':'172.28.1.247',
+    'host':'localhost',
     'port':3306,
     'user':'root',
-    'password':'kzO2Rgel6xs80a3JYKB2',
-    'db':'test',
+    'password':'Mi123456',
+    'db':'sakila',
    'charset': 'utf8'
 }

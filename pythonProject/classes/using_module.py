@@ -3,7 +3,7 @@ __author__='zhaojianghua'
 
 import  sys
 
-def test():
+def Mytest1():
     args=sys.argv
     if len(args)==1:
         print('Hello, World!')
@@ -13,4 +13,4 @@ def test():
         print('Too many args')
 
 if __name__=='__main__':
-    test()
+    Mytest1()
