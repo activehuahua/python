@@ -10,7 +10,7 @@
 import unittest
 import requests
 from ddt import ddt,data,unpack
-from readExcel import ReadExcel
+from ddtTest.readExcel import ReadExcel
 import os,json
 from time import sleep
 from selenium import webdriver

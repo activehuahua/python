@@ -7,17 +7,6 @@
 @desc   :
 '''
 
-#! /usr/bin/env python
-# -*- coding:utf-8 -*-
-
-"""
-@version: 1.0
-@author: fky
-@site: 
-@software: PyCharm
-@file: readExcel.py
-@time: 2018/3/24 9:37
-"""
 import xlrd
 
 class ReadExcel():

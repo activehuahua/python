@@ -10,11 +10,11 @@
 '''
 
 import pymysql
-import db_conf
+from Database.mysqlDb import db_conf
 
 
 data = {
-    '`issue`': '15',
+    '`issue`': '5',
     '`release`': '12.0.1',
     '`author`': 'zhaojianghua',
     '`note`': '654321发的规范的'
@@ -32,6 +32,8 @@ if __name__ == '__main__':
     update = ','.join(["{key}=%s".format(key=key) for key in data])
 
     sql = sql + update
+    print(sql)
+
     try:
         connect = pymysql.connect(**db_conf.TESTDB_CONFIG)
         cursor = connect.cursor(pymysql.cursors.DictCursor)
@@ -44,5 +46,3 @@ if __name__ == '__main__':
     finally:
         connect.close()
 
-    # print(  values )
-    # print(sql)
