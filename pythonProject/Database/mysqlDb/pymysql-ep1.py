@@ -57,8 +57,6 @@ def mtest_execute_many(connection, sql):
 if __name__ == '__main__':
     insert_sql = "INSERT INTO `users` (`email`, `password`) VALUES (%s, %s)"
     connection = pymysql.connect(**db_conf.TESTDB_CONFIG)
-    # connection = pymysql.connect(host='localhost', port=3306, user='root',
-    #                              password='Mi123456', db='sakila', charset='utf8')
 
     mtest_execute(connection, insert_sql)
     mtest_execute_many(connection, insert_sql)
