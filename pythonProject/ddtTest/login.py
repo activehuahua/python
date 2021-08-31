@@ -20,9 +20,12 @@ webUrl = 'https://{}:{}@{}'.format(username, password, url)
 browser.get(webUrl)
 
 
-login_url='https://ec.qingmutec.com/en_cn/customer/account/login/'
+login_url='https://{}:{}@{}'.format(username, password, "ec.qingmutec.com/en_cn/customer/account/login/")
 
 browser.get(login_url)
+
+closeButton = browser.find_element_by_class_name('action-close')
+closeButton.click()
 
 email=browser.find_element_by_id('email')
 password=browser.find_element_by_id('pass')
@@ -37,8 +40,8 @@ login=browser.find_element_by_id('send2')
 #print(loginResult)
 
 
-email.send_keys('15002803902')
-password.send_keys('adminfkk')
+email.send_keys('164033495@qq.com')
+password.send_keys('Mi123456')
 login.click()
 loginResult=browser.find_element_by_xpath('//div[@class="session-menu"]/ul/a/li[@class="user-regs  login_act "]/span')
 
