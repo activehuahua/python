@@ -19,7 +19,7 @@ msg = MIMEMultipart()
 
 from_addr ='jianghua_zhao@163.com'
 password = 'Cdzjh730815'
-to_addr = 'zhaojianghua@pretang.com'
+to_addr = '164033495@qq.com'
 # 输入SMTP服务器地址:
 #smtp_server = input('SMTP server: ')
 smtp_server = 'smtp.163.com'
@@ -60,9 +60,9 @@ part.add_header('Content-Disposition', 'attachment', filename='me.jpg')
 msg.attach(part)
 
 
-part = MIMEApplication(open('显示器.txt', 'rb').read())
-part.add_header('Content-Disposition', 'attachment', filename='显示器.txt')
-msg.attach(part)
+# part = MIMEApplication(open('显示器.txt', 'rb').read())
+# part.add_header('Content-Disposition', 'attachment', filename='显示器.txt')
+# msg.attach(part)
 
 server = smtplib.SMTP(smtp_server, 25) # SMTP协议默认端口是25
 server.set_debuglevel(1)

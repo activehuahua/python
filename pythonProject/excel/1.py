@@ -13,5 +13,7 @@ sec_col=sheet.col(1)
 
 first_col.width=256*50
 
+sheet.write(1,2,10)
+
 
 book.save('width.xls')
