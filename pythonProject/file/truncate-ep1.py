@@ -10,11 +10,11 @@
 
 fo = open("runoob.txt", "r+")
 print ("文件名: ", fo.name)
-
 line = fo.readline()
 print ("读取行: %s" % (line))
 
-fo.truncate()
+fo.truncate(2)
+
 line = fo.readlines()
 print ("读取行: %s" % (line))
 

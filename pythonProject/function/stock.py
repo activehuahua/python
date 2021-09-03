@@ -26,8 +26,8 @@ def main():
                   's_sz002431', 's_sz300465', 's_sz300059', 's_sz300033', 's_sz300431', 's_sz002769', 's_sz300469',
                   's_sh600707', 's_sz300294', 's_sz002273', 's_sz002477', 's_sh600518','s_sh510500', 's_sh510300']
     print('#'*90)
-    print(Fore.YELLOW + "股票名称", "\t\t", Fore.YELLOW + "最新价", "\t\t", Fore.YELLOW + "涨跌额", "\t\t", Fore.YELLOW + "涨跌幅", "\t\t",
-          Fore.YELLOW + "成交量", "\t\t", Fore.YELLOW + "成交额")
+    print(Fore.YELLOW + "股票名称", "\t\t", Fore.YELLOW + "最新价", "\t\t\t", Fore.YELLOW + "涨跌额", "\t\t\t", Fore.YELLOW + "涨跌幅", "\t\t\t",
+          Fore.YELLOW + "成交量", "\t\t\t", Fore.YELLOW + "成交额")
     for stockcode in stockcodes:
         urlstr = "http://hq.sinajs.cn/rn=1427697590184&list=%s" % stockcode
         pcre = r'="(.*?)";'
@@ -49,8 +49,3 @@ def main():
 
 main()
 
-# if __name__ == "__main__":
-#     urlstr = "http://hq.sinajs.cn/rn=1427697590184&list=s_sz300294"
-#     pcre = r'="(.*?)";'
-#     d=htmlData(url=urlstr,pcre=pcre).split(',')
-#     print(d)

@@ -7,14 +7,14 @@ def matrx(tuple1,tuple2):
     cell_len=len(tuple2)
     aaList=[]
     aList=[]
-    # 初始化单位元素
+    #初始化单位元素
     for i in range(weidu_x):
         aList.append(0)
     # 初始化最终结果元素
     for i in range(weidu_x):
          bList=copy.deepcopy(aList)
          aaList.append(bList)
-
+    print(aList,aaList)
     a=0
 
     for i in range(weidu_x):

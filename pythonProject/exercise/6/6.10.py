@@ -15,6 +15,9 @@ def upper_lower(str1):
     str2=''.join(aList)
     print(str2)
 
+def doCapitcal(s):
+    str=s.upper()
+    print(str)
 
 if __name__=='__main__':
     str_input=input('Please input a string: ');
@@ -22,5 +25,6 @@ if __name__=='__main__':
         if str_input =='q':
            break
         else:
-            upper_lower(str_input)
+            # upper_lower(str_input)
+            doCapitcal(str_input)
         str_input=input('Please input a string: ');

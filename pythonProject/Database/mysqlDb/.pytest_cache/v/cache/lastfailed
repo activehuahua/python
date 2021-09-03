@@ -1,0 +1,4 @@
+{
+  "pymysql-ep1.py::test_execute": true,
+  "pymysql-ep1.py::test_execute_many": true
+}

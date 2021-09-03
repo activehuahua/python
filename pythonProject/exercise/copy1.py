@@ -11,3 +11,4 @@ wifey2[0] = 'Jane2'
 
 hubby[1][1] = 20
 print(hubby,wifey, wifey2)
+print(id(hubby),id(wifey),id(wifey2))

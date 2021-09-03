@@ -1,0 +1,6 @@
+[
+  "case_login_01.py::Test1::test_login_1",
+  "case_login_01.py::Test1::test_login_2",
+  "case_login_01.py::MyTest1::test_login_1",
+  "case_login_01.py::MyTest1::test_login_2"
+]

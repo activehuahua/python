@@ -17,6 +17,7 @@ def deelDigitToEnglish(num):
     print(str)
 
 def getOne(num):
+    num=int(num)
     if num !=0:
         str=aList_single[num-1]
     return  str
@@ -54,7 +55,7 @@ if __name__=='__main__':
             print('Input invalid, please input again!')
             num=input('Please input a number :')
         else:
-            #num=int(num)
+            # num=int(num)
             deelDigitToEnglish(num)
         num=input('Please input a number :')
 

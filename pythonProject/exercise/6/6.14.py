@@ -33,12 +33,19 @@ def judgeWinIf(youChoice,machineChoice):
 
 if __name__=='__main__':
     i=0
+
+    dict={"shitou":0,"jiandao":0,"bu":0}
     while True:
-        if i<10:
+        if i<20:
            youChoice=random.choice(aList)
            machineChoice=random.choice(aList)
            #print(youChoice,' & ',machineChoice,',',judgeWin(youChoice,machineChoice))
-           print(youChoice,' & ',machineChoice,',',judgeWinIf(youChoice,machineChoice))
+           # print(youChoice,' & ',machineChoice,',',judgeWinIf(youChoice,machineChoice))
+
+           if youChoice in dict:
+               dict[youChoice]+=1
            i+=1
+
         else:
+            print(dict)
             break

@@ -6,4 +6,4 @@ dict5={'abc':456}
 dict6={'abc':123,98.6:97}
 print('host %(name)s is running on port %(port)d'%dict1)
 
-dict([('xy'[i-1],i) for i in range(1,3)])
+print(dict([('xy'[i-1],i) for i in range(1,3)]))

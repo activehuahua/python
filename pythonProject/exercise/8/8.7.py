@@ -1,4 +1,7 @@
+#玩趣数是除开自己的因子外，所有因数相乘和相加的结果一致
+
 import  string
+
 def getfactors(num):
     list1=[1]
     count=num//2

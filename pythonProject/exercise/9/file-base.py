@@ -1,6 +1,6 @@
 import os
 
-for tmpdir in ('\tmp',r'C:\temp'):
+for tmpdir in ('\tmp',r'd:\temp'):
     if os.path.isdir(tmpdir):
         break
     else:

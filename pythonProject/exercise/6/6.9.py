@@ -12,4 +12,3 @@ if __name__=='__main__':
         else:
             num_changeTo_time(num)
         num=input('Please input a number: ');
-
