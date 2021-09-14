@@ -1,8 +1,8 @@
-import  os
+import  os,sys
 
 
 command=''
-DIR=r"E:\pythonProject"
+DIR=sys.path[2]
 while True:
     command=input('Please input command:')
     if command=='exit':

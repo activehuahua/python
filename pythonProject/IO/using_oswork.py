@@ -1,8 +1,8 @@
-import  os
+import  os,sys
 
 
 command=''
-root=r"E:\pythonProject"
+root=os.path.dirname(os.path.dirname(os.getcwd()))
 while True:
     command=input('Please input command:')
     if command=='exit':

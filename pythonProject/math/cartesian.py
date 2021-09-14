@@ -25,4 +25,5 @@ if __name__=="__main__":
     car.add_data([1,2,3,4])
     car.add_data([5,6,7,8])
     car.add_data([9,10,11,12])
+    print(car._data_list)
     car.build()

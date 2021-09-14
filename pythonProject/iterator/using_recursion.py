@@ -10,5 +10,5 @@ def move(n,a,b,c):
     print('move',a,'-->',c)
     move(n-1,b,a,c)
 
-move(3,'A','B','C')
+move(100,'A','B','C')
 print(total)

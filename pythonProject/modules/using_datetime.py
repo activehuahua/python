@@ -14,7 +14,7 @@ cday = datetime.strptime('2015-6-1 18:19:59', '%Y-%m-%d %H:%M:%S')
 print(cday)
 
 now = datetime.now()
-print(now.strftime('%a,%b %d %H:%M'))
+print(now.strftime('%a,%b %d %H:%M'))   # Mon,Sep 13 17:10
 
 now=datetime.now()
 dt=now+timedelta(days=1)

@@ -1,11 +1,17 @@
 def triangles(max):
     n=2
     pre=[]
+    new=[]
     while n<=3:
-            pre=list(range(1,n))
-            pre[-1]=1
-            print(pre)
-            n=n+1
+        # new = list(range(1, n))
+        # new[-1] = 1
+        pre=list(range(1,n))
+        pre[-1]=1
+        print(pre)
+        # pre = new
+        new=pre
+        n=n+1
+
 
     while n<max:
         new=list(range(1,n))
@@ -18,4 +24,4 @@ def triangles(max):
         n=n+1
     return new
 
-triangles(11)
+triangles(3)

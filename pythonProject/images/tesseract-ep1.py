@@ -38,7 +38,7 @@ def deal_image(filename):
 
 if __name__ == '__main__':
 
-    for i in range(1, 4):
+    for i in range(1, 3):
         try:
             imageName = str(i) + '.png'
             deal_image(imageName)

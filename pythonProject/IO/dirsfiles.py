@@ -1,6 +1,7 @@
-import os
+import os,sys
 
-root=r"E:\pythonProject"
+root=os.getcwd()
+print("root:",root)
 def gci(path):
     parents=os.listdir(path)
     for parent in parents:

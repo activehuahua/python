@@ -17,10 +17,12 @@ def char2num(s):
 def str2float(s):
     i=len(s)-s.index('.')-1
     s=s.replace('.','')
-
-
     return   reduce(f,map(char2num,s))/math.pow(10,i)
 
 print('3 * 5 * 7 * 9 =', prod([3, 5, 7, 9]))
 
 print('str2float(\'123.456\') =', str2float('123.456'))
+
+str='123.345'
+f1=float(str)
+print(f1)

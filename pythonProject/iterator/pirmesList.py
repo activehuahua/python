@@ -19,7 +19,7 @@ def primes():
         it = filter(_not_divisible(n), it) # 构造新序列
 
 for n in primes():
-    if n < 1000:
-        print(n)
+    if n < 100:
+        print(n,end=" ")
     else:
         break

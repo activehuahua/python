@@ -6,7 +6,7 @@
 @Time    : 2018/12/5 9:59
 '''
 
-import support
+from pythonProject.imports import support
 from function.fibo import Fib
 
 support.print_func("Runoob")

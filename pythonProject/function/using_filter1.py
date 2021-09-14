@@ -5,11 +5,13 @@ def _ord_iter():
         yield  n
 
 def _not_divisible(n):
-    return lambda x : x % n > 0
+    result= lambda x : x % n > 0
+    return result
 
 def primes():
     yield 2
     it=_ord_iter()
+    # print(it)
     while True:
         n=next(it)
         yield n
@@ -18,7 +20,7 @@ global num
 num=0
 for n in primes():
 
-    if n<1000:
+    if n<20:
         print(n, end=' ')
         num+=1
         #print('num=',num)

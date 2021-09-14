@@ -6,6 +6,7 @@
 # @Desc    :
 
 import requests,json,re
+from requestsDemo import configs
 from time import sleep
 #import configs
 

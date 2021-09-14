@@ -14,7 +14,9 @@ dicts='''
 '''
 
 dicts=dicts.replace("'","\"").replace("True","true").replace("False","false")
+print(dicts)
 json_str=json.loads(dicts)
+print(json_str)
 #print(json_str.get('content'))
 
 for item in range(len(json_str.get('content'))):

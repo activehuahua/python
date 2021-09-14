@@ -14,12 +14,12 @@ content='''
 
 Json=json.loads(content)
 
-# for item in range(len(Json['catalogs'])):
-#     print(Json.get('catalogs')[item])
+for item in range(len(Json['catalogs'])):
+    print(Json.get('catalogs')[item])
 
 print('The account of the catalog is ',len(Json['catalogs']))
 
-# for item in range(len(Json['companylist'])):
-#     print(Json.get('companylist')[item])
+for item in range(len(Json['companylist'])):
+    print(Json.get('companylist')[item])
 
 print('The account of the companylist is ' ,len(Json['companylist']))

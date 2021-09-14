@@ -18,4 +18,4 @@ print(list(r))
 
 a = [1, 2, 3, 4, ['a', 'b']]
 a.remove(1)
-
+print(a)
