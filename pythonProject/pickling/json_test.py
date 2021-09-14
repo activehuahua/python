@@ -16,5 +16,10 @@ def jstr2student(jstr):
 
 json_str = '{"name": "xiaoming", "score": 10, "age": 22}'
 s = json.loads(json_str, object_hook=jstr2student)
+# s = json.loads(json_str)
+
 print(s)
 print(s.__dict__)
+
+s = json.loads(json_str)
+print(s)

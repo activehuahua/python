@@ -23,7 +23,7 @@ while True:
         break
 
 data = b''.join(buffer)
-
+print('data:',data)
 # 关闭连接:
 s.close()
 

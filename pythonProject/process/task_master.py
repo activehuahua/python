@@ -22,7 +22,7 @@ def return_result_queue ():
     global result_queue
     return result_queue
 
-def test ():
+def Mtest1():
     # 把两个Queue都注册到网络上, callable参数关联了Queue对象:
     QueueManager.register('get_task_queue', callable=return_task_queue)
     QueueManager.register('get_result_queue',  callable=return_result_queue)
@@ -52,4 +52,4 @@ def test ():
 
 if __name__ == '__main__':
     freeze_support()
-    test()
+    Mtest1()

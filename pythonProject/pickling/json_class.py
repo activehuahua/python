@@ -15,6 +15,6 @@ def stu2dic(stu):
 
 
 student=Student("Alex",30 ,90)
-#print(json.dumps(stu2dic(student)))
+# print(json.dumps(stu2dic(student)))
 #print(json.dumps(student,default=stu2dic))
 print(json.dumps(student, default=lambda obj: obj.__dict__))

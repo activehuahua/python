@@ -33,10 +33,10 @@ def fba():
     finally:
         lockb.release()
 
-t1 = threading.Thread(target=fab)
-#t2 = threading.Thread(target=fab)
-t1.start()
-#t2.start()
-t1.join()
-#t2.join()
+# t1 = threading.Thread(target=fab)
+t2 = threading.Thread(target=fba)
+# t1.start()
+t2.start()
+# t1.join()
+t2.join()
 print('end')
