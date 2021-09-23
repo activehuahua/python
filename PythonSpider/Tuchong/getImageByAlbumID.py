@@ -36,8 +36,8 @@ class getImageByAlbumID():
         try:
             result=list(eval(result[0].replace('false','False').replace('true','True')))
 
-            for i in range(len(result)):
-                print(result[i])
+            for i in range(len(result)-1):
+                # print(result[i])
                 image_dict={}
                 a=result[i]
                 newResult=dict(a)
@@ -53,21 +53,21 @@ class getImageByAlbumID():
         return url
 
     def downloadImages(self):
-        if(os.path.exists('images')):
-            pass
-        else:
+        if not os.path.exists('images'):
             os.mkdir('images')
 
-        if(os.path.exists('images'+os.sep+self.__image_dict['artist_name'])):
-            pass
-        else:
+        if not os.path.exists('images'+os.sep+self.__image_dict['artist_name']):
             os.mkdir('images'+os.sep+self.__image_dict['artist_name'])
 
-        for i in range(len(self.__image_dict)):
-            url=self.getLarge_image_url(eval(self.__image_dict['image_id']))
-            img=requests.get(url,headers=self.header)
-            with open('images'+os.sep+self.__image_dict['artist_name']+os.sep+self.__image_dict['artist_name']+'-'+self.__image_dict['image_id']+'-'+self.__image_dict['title']+'.jpg','ab') as f:
-                f.write(img.content)
+        url=self.getLarge_image_url(eval(self.__image_dict['image_id']))
+        img=requests.get(url,headers=self.header)
+
+        filename='images'+os.sep+self.__image_dict['artist_name']+os.sep+self.__image_dict['artist_name']+'-'+self.__image_dict['title']+self.__image_dict['image_id']+'.jpg'
+
+        if not os.path.exists(filename):
+            with open(filename,'ab') as f:
+                     f.write(img.content)
+                     print('Downloading the file ',filename)
 
     def writeToTextFile(self,content):
         with open('content.txt','a', encoding='UTF-8') as f:
@@ -78,11 +78,12 @@ if __name__ == '__main__':
     # url = 'https://stock.tuchong.com/topic?topicId=50064'
     topicList=[49770]
     for i in range(len(topicList)):
-        url='https://stock.tuchong.com/topic?goodsType=0&page=2&size=100&topicId='+str(topicList[i])
-        # topicId = common.getTopicId(url)
+        for j in range(10):
+            url='https://stock.tuchong.com/topic?goodsType=0&page='+str(j)+'&size=100&topicId='+str(topicList[i])
+            # topicId = common.getTopicId(url)
 
-        album = getImageByAlbumID()
-        content=album.getHtml(url)
-        album.writeToTextFile(content)
-        album.getImageID(content)
+            album = getImageByAlbumID()
+            content=album.getHtml(url)
+            album.writeToTextFile(content)
+            album.getImageID(content)
 
