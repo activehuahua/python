@@ -2,7 +2,7 @@
 
 '''
 # Name:         getImageByAlbumID
-# Description:  
+# Description:  通过页面元素解析下载图片
 # Author:       alex
 # Date:         2021/9/16
 #               https://stock.tuchong.com/topic?topicId=50064
@@ -70,13 +70,13 @@ class getImageByAlbumID():
                      print('Downloading the file ',filename)
 
     def writeToTextFile(self,content):
-        with open('content.txt','a', encoding='UTF-8') as f:
+        with open('content.txt','w+', encoding='UTF-8') as f:
             f.write(content)
 
 
 if __name__ == '__main__':
-    # url = 'https://stock.tuchong.com/topic?topicId=50064'
-    topicList=[49770]
+    # url = 'https://stock.tuchong.com/topic?topicId=50064 ,49770'
+    topicList=[50064]
     for i in range(len(topicList)):
         for j in range(10):
             url='https://stock.tuchong.com/topic?goodsType=0&page='+str(j)+'&size=100&topicId='+str(topicList[i])
