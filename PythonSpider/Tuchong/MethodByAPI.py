@@ -21,9 +21,13 @@ class getImageByAlbumID():
         self.__image_dict={}
         self.topicId=0
         self.totalNum=0
+        self.topic=''
 
     def setTopic(self,topicId):
         self.topicId=topicId
+
+    def setTopicTitle(self,topic):
+        self.topic=topic
 
     def setTotalNum(self,total):
         self.totalNum=total
@@ -52,6 +56,10 @@ class getImageByAlbumID():
         total=int(json_response['data']['total'])
         # total=math.ceil(total/100.0)
         self.setTotalNum(total)
+
+        topic=str(json_response['data']['topic']['title']).replace('/','').replace('\n','').replace('\r','')
+
+        self.setTopicTitle(topic)
         return json_response
 
     def getTotalNum(self,response):
@@ -66,10 +74,13 @@ class getImageByAlbumID():
             itemsNums=len(response['data']['goods_list'])
 
             for item in range(0,itemsNums):
-                self.__image_dict['image_id']=response['data']['goods_list'][item]['image_id']
-                self.__image_dict['artist_name']=response['data']['goods_list'][item]['artist_name']
-                self.__image_dict['title']=str(response['data']['goods_list'][item]['title']).replace('\n','').replace('\r','')
-                self.downloadImages(item)
+                try:
+                    self.__image_dict['image_id']=response['data']['goods_list'][item]['image_id']
+                    self.__image_dict['artist_name']=response['data']['goods_list'][item]['artist_name']
+                    self.__image_dict['title']=str(response['data']['goods_list'][item]['title']).replace('\n','').replace('\r','')
+                    self.downloadImages(item)
+                except:
+                    continue
 
 
     def getLarge_image_url(self,image_id):
@@ -80,13 +91,13 @@ class getImageByAlbumID():
         if not os.path.exists('images'):
             os.mkdir('images')
 
-        if not os.path.exists('images'+os.sep+self.__image_dict['artist_name']):
-            os.mkdir('images'+os.sep+self.__image_dict['artist_name'])
+        if not os.path.exists('images'+os.sep+self.topic):
+            os.mkdir('images'+os.sep+self.topic)
 
         url=self.getLarge_image_url(eval(self.__image_dict['image_id']))
         img=requests.get(url,headers=self.header)
 
-        filename='images'+os.sep+self.__image_dict['artist_name']+os.sep+self.__image_dict['artist_name']+'-'+str(item)+'-'+self.__image_dict['title']+'.jpg'
+        filename='images'+os.sep+self.topic+os.sep+self.__image_dict['artist_name']+'-'+str(item)+'-'+self.__image_dict['title']+'.jpg'
 
         if not os.path.exists(filename):
             with open(filename,'ab') as f:
@@ -100,9 +111,9 @@ class getImageByAlbumID():
 
 
 if __name__ == '__main__':
-     topicList=[50064,49770]
-
-     for i in range(len(topicList)):
+     # topicList=[50064,49770] 49202
+     topicList = [50064]
+     for i in range(0,len(topicList)):
             url='https://stock.tuchong.com/api/topic?goods_type=0&page=1&size=100&topic_id='+str(topicList[i])
 
             album = getImageByAlbumID()
