@@ -80,7 +80,7 @@ class Login(object):
         #email = input("email or username: ")
         # 输入的密码不可见，注意密码一定不能错
         #password = getpass.getpass("password:")
-        self.login(email='activehuahua', password='cdzjh730815')
+        self.login(email='activehuahua', password='Cdzjh730815')
 
 
 if __name__ == "__main__":

@@ -31,7 +31,7 @@ class getImageByAlbumID():
 
     def getImageID(self,content):
 
-        pattern = re.compile('goods=\[(.*)\];\n</script>', re.S)
+        pattern = re.compile('goods=\[(.*)\];\nbuildEnvData={"env":"production","release":"1.0.0.1415"};\n</script>', re.S)
         result=re.findall(pattern,content)
         try:
             result=list(eval(result[0].replace('false','False').replace('true','True')))
@@ -56,8 +56,9 @@ class getImageByAlbumID():
         if not os.path.exists('images'):
             os.mkdir('images')
 
-        if not os.path.exists('images'+os.sep+self.__image_dict['artist_name']):
-            os.mkdir('images'+os.sep+self.__image_dict['artist_name'])
+        if not os.path.exists('images'+os.sep+self.__image_dict['topic']):
+           #os.mkdir('images'+os.sep+self.__image_dict['artist_name'])
+           os.mkdir('images' + os.sep + self.__image_dict['artist_name'])
 
         url=self.getLarge_image_url(eval(self.__image_dict['image_id']))
         img=requests.get(url,headers=self.header)
@@ -76,11 +77,11 @@ class getImageByAlbumID():
 
 if __name__ == '__main__':
     # url = 'https://stock.tuchong.com/topic?topicId=50064 ,49770'
-    topicList=[50064]
+    topicList=[49202]
     for i in range(len(topicList)):
         for j in range(10):
             url='https://stock.tuchong.com/topic?goodsType=0&page='+str(j)+'&size=100&topicId='+str(topicList[i])
-            # topicId = common.getTopicId(url)
+            topicId = common.getTopicId(url)
 
             album = getImageByAlbumID()
             content=album.getHtml(url)

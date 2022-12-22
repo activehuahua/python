@@ -3,7 +3,7 @@
 
 '''
 # Name:         MethodByAPI
-# Description:  通过接口接口下载对应的图片
+# Description:  通过接口接口下载对应的图片 根据搜索的topic id获取图片
 # Author:       alex
 # Date:         2021/9/30
 # URL:         https://stock.tuchong.com/api/topic?goods_type=0&page=1&size=200&topic_id=50064
@@ -112,7 +112,7 @@ class getImageByAlbumID():
 
 if __name__ == '__main__':
      # topicList=[50064,49770] 49202
-     topicList = [50064]
+     topicList = [49202]
      for i in range(0,len(topicList)):
             url='https://stock.tuchong.com/api/topic?goods_type=0&page=1&size=100&topic_id='+str(topicList[i])
 
