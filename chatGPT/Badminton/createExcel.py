@@ -16,6 +16,12 @@ def getRoundCount():
     roundCount=math.ceil(totalCount/len(field_names))
     return  roundCount
 
+def getCoundNames(roundCount):
+    round_names=[]
+    for index in range(roundCount):
+        round_names.append('第'+str(index+1)+'轮')
+    return round_names
+
 #
 # df = pd.DataFrame(columns=field_names, index=round_names)
 #
@@ -29,10 +35,31 @@ def getRoundCount():
 #
 # df.to_excel('秩序表.xlsx')
 
-def getAllMatchups(player_names_A,player_names_B):
+def getAllMatchups(player_names_A,player_names_B,field_names):
     matchups = []
+    for index_a in range(len(player_names_A)):
+        for index_b in range(len(player_names_B)):
+            matchups.append(player_names_A[index_a]+":"+player_names_B[index_b])
+    print(len(matchups))
     return matchups
+
+def export2Excel(matchups,field_names,round_names):
+    df = pd.DataFrame(columns=field_names, index=round_names)
+    index=0
+    for round_index, round_name in enumerate(round_names):
+        for field_index, field_name in enumerate(field_names):
+            df.at[round_name, field_name] = matchups[index]
+            print("[index=]%d,%s"%(index,matchups[index]))
+            index=index+1
+            if index>=49 :
+                matchups.append('')
+
+    df.to_excel('秩序表.xlsx')
 
 if __name__ == '__main__':
     roundCount=getRoundCount()
     print(roundCount)
+    matchups=getAllMatchups(player_names_A,player_names_B,field_names)
+    # print(matchups[0])
+    round_names=getCoundNames(roundCount)
+    export2Excel(matchups,field_names,round_names)
