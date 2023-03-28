@@ -41,7 +41,6 @@ class DaZhuan:
     '''初始化队列'''
     def getInitQueue(self):
         members=self.__members[:]
-        # print(self.__members)
         self.__queueLeft=self.getRandom(self.__count,self.__members)
         self.__rightList = list(set(members).difference(set(self.__queueLeft)))
         print(self.__queueLeft,self.__leftList,self.__rightList)
@@ -51,30 +50,41 @@ class DaZhuan:
         # self.getInitQueue()
         randomList=[]
         tempList=[]
+        queueLeft=self.__queueLeft[:]
+        rightList=self.__rightList[:]
         for i in range(self.__totalCount):
             for num in range(2):
-                randomList.append(self.__queueLeft[0])
-                tempList.append(self.__queueLeft[0])
+                randomList.append(queueLeft[0])
+                tempList.append(queueLeft[0])
 
-                self.__queueLeft.pop(0)
+                queueLeft.pop(0)
 
-            # print(self.__queueLeft,len(self.__queueLeft))
             self.__comboes.append(randomList)
-            self.__comboes.append(self.__queueLeft)
+            self.__comboes.append(queueLeft)
+            print('comboes:%s' % self.__comboes)
 
-            for index in range(len(self.__rightList)):
-                self.__queueLeft.append(self.__rightList[index])
-            print('self.__queueLeft:%s'%self.__queueLeft)
-            # print(self.__rightList)
-            self.__rightList.clear()
-            self.__rightList=tempList
-            print(self.__rightList)
+            for index in range(len(rightList)):
+                queueLeft.append(rightList[index])
+
+            rightList.clear()
+            rightList=tempList
+
             randomList = []
             tempList=[]
-            print(self.__comboes)
-        # print(self.__comboes)
 
+        print('comboes:%s' % self.__comboes)
 
+    '''组合不重复，可以插入'''
+    def compareDiffert(list1,list2):
+        for i in range(len(list1)):
+            if isinstance(list1[i], list):
+                list1[i].sort()
+                for index1 in range(len(list1[i])):
+                    if list1[i][index1] != list2[index1]:
+                        print('不存在')
+                        return True
+
+                return False
 
 
     '''从list中随机抽取count个随时元素'''
