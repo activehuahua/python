@@ -29,7 +29,7 @@ class DaZhuan:
         '''队列外元素'''
         self.__rightList=[]
         '''总的局数'''
-        self.__totalCount=6
+        self.__totalCount=5
     '''初始化人员，每次出场人数'''
     def setMembers(self,count,member_list):
         self.__members=member_list
@@ -52,6 +52,7 @@ class DaZhuan:
         tempList=[]
         queueLeft=self.__queueLeft[:]
         rightList=self.__rightList[:]
+        comboes=self.__comboes[:]
         for i in range(self.__totalCount):
             for num in range(2):
                 randomList.append(queueLeft[0])
@@ -59,20 +60,22 @@ class DaZhuan:
 
                 queueLeft.pop(0)
 
-            self.__comboes.append(randomList)
-            self.__comboes.append(queueLeft)
-            print('comboes:%s' % self.__comboes)
+            comboes.append(randomList)
+            comboes.append(queueLeft)
+            print('comboes:%s' % comboes)
 
             for index in range(len(rightList)):
                 queueLeft.append(rightList[index])
 
-            rightList.clear()
-            rightList=tempList
+            rightList=[]
+            # rightList=tempList
+            for index in range(len(tempList)):
+                rightList.append(tempList[index])
 
             randomList = []
             tempList=[]
 
-        print('comboes:%s' % self.__comboes)
+        print('comboes:%s' % comboes)
 
     '''组合不重复，可以插入'''
     def compareDiffert(list1,list2):
