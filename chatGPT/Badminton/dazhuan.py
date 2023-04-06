@@ -7,8 +7,12 @@
 # Author:       alex
 # Date:         2023/3/28
 '''
+import datetime
+import os
 import queue
 import random
+import pandas as pd
+from datetime import date
 
 class DaZhuan:
     def __init__(self):
@@ -30,6 +34,10 @@ class DaZhuan:
         self.__rightList=[]
         '''总的局数'''
         self.__totalCount=6
+
+        self.__fileName=''
+        self.__roundNames=[]
+        self.__field_name=['左场地','右场地']
     '''初始化人员，每次出场人数'''
     def setMembers(self,count,member_list):
         self.__members=member_list
@@ -55,7 +63,14 @@ class DaZhuan:
         members=self.__members
         self.__queueLeft=self.getRandom(self.__count,self.__members)
         self.__rightList = list(set(members).difference(set(self.__queueLeft)))
-        print(self.__queueLeft,self.__rightList)
+
+        resultPath = os.getcwd() + os.path.sep + 'result'
+        if os.path.exists(resultPath):
+            print('已存在该文件夹')
+        else:
+            os.mkdir(resultPath)
+        self.__fileName=resultPath+os.path.sep+'打转对阵表_'+str(datetime.datetime.now().date())+'.xlsx'
+
 
     '''获取对阵'''
     def getMatchups(self):
@@ -63,76 +78,58 @@ class DaZhuan:
         randomList=[]
         tempList=[]
         comblist=[]
-        # memberResult = False
-        rightList=self.__rightList[:]
-        comboes=self.__comboes[:]
-        # for i in range(self.__totalCount):
+        rightList=self.__rightList
+        comboes=self.__comboes
+        roundNum=0
         while(len(self.__comboes)<6):
             result=False
-
+            roundNum+=1
+            self.__roundNames.append('第'+str(roundNum)+'局')
             '''从queueLeft中4个中随机2个进组合，判断已有组合中是否存在'''
             while(not result):
-
+                '''清理队列中连打超过2次的元素'''
+                for index in range(len(self.__queueLeft)):
+                    isMoreThan2=self.is_more_than_twice(self.__comboes,self.__queueLeft[index])
+                    if isMoreThan2:
+                        self.removeMemberFromQueueList(self.__queueLeft[index])
                 comblist=self.getRandom(2,self.__queueLeft)
                 set_comblist = set(comblist)
                 set_queueList = set(self.__queueLeft)
                 tempList = list(set_queueList.difference(set_comblist))
-                print('comblist:%s,tempList:%s,queueLeft:%s'%(comblist,tempList,self.__queueLeft))
 
-                memberResult1=False
-                memberResult2=False
-                for index in range(len(comblist)):
-                    # memberResult1 = False
-                    memberResult1 =self.is_more_than_twice(self.__comboes, comblist[index])
-                    if memberResult1:
-                        self.removeMemberFromQueueList(comblist[index])
-                        continue
+                if not self.compareDiffert(self.__comboes,comblist) and not self.compareDiffert(self.__comboes,tempList):
 
-                for index in range(len(tempList)):
-                    # memberResult2 = False
-                    memberResult2 = self.is_more_than_twice(self.__comboes, tempList[index])
-                    if memberResult2:
-                        self.removeMemberFromQueueList(tempList[index])
-                        continue
-                if (memberResult2 or memberResult1):
-                    continue
-                elif  not self.compareDiffert(self.__comboes,comblist) and not self.compareDiffert(self.__comboes,tempList):
-
-                    # if ( not memberResult):
                         result = True
                         middleList=[]
                         middleList.append(comblist)
                         middleList.append(tempList)
 
                         self.__comboes.append(middleList)
-                        print('comblist:%s'%comblist)
+
                         self.removeMemberFromList(comblist)
-                        # print(len(self.__rightList))
-                        print('queueList1:%s'%self.__queueLeft)
+
                         self.__queueLeft.extend(self.__rightList)
-                        print('queueList2:%s' % self.__queueLeft)
+
                         self.__rightList.clear()
                         self.__rightList.extend(comblist)
                         comblist=[]
                         tempList = []
                         print('comboes:%s' % self.__comboes)
-                        print('----------------------------------------------------')
 
             randomList = []
-            tempList=[]
 
-        # print('comboes:%s' % comboes)
+        print('comboes:%s' % self.__comboes)
 
+    '''将元素从list中删除，添加新元素'''
     def removeMemberFromQueueList(self,member):
-        print('queus原始%s'%self.__queueLeft)
         self.__queueLeft.remove(member)
-        self.__rightList.extend(member)
+        '''此处会将2个字符的汉字加入list中会只添加单个汉字'''
+        # self.__rightList.extend(member)
+        self.__rightList.append(member)
 
         temp=self.__rightList[0]
-        print('temp:%s'%temp)
         self.__rightList.pop(0)
-        self.__queueLeft.extend(temp)
-        print('member:%s,queueList:%s'%(member,self.__queueLeft))
+        self.__queueLeft.append(temp)
 
     '''组合不重复，返回False则对阵list中可以插入'''
     def compareDiffert(self,list1,list2):
@@ -174,17 +171,10 @@ class DaZhuan:
 
     '''从list中移除另外一个list'''
     def removeMemberFromList(self,memberList):
-        # for element in memberList:
-        #     if element in source:
-        #         source.remove(element)
-        # return source
         set1=set(self.__queueLeft)
         set2=set(memberList)
         tempList=list(set1.difference(set2))
         self.__queueLeft=tempList
-        # return tempList
-
-
 
     def addMemberFromList(self):
         self.__queueLeft.extend(self.__rightList)
@@ -195,13 +185,19 @@ class DaZhuan:
         templist=sourceList
         if (len(sourceList)>4):
             print("error len")
-
         randomList=random.sample(templist,count)
         return randomList
 
+    def export2Excel(self):
+        df = pd.DataFrame(columns=self.__field_name, index=self.__roundNames)
+        for round_index, round_name in enumerate(self.__roundNames):
+            for field_index, field_name in enumerate(self.__field_name):
+                df.at[round_name, field_name] = self.__comboes[round_index][field_index]
+        df.to_excel(self.__fileName)
 
 if __name__ == '__main__':
     dazhuan= DaZhuan()
-    sourceList=['1','2','3','4','5','6']
+    sourceList=["华哥","老虎","暗地","泡泡","炮哥","笨笨"]
     dazhuan.setMembers(4,sourceList)
     dazhuan.getMatchups()
+    dazhuan.export2Excel()
